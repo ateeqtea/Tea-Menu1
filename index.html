@@ -59,10 +59,6 @@
     }
 
 
-    /* ==============================
-       MAIN CONTAINER
-    ============================== */
-
     .container {
       width: 100%;
       max-width: 650px;
@@ -70,9 +66,7 @@
     }
 
 
-    /* ==============================
-       HEADER
-    ============================== */
+    /* HEADER */
 
     .header {
       text-align: center;
@@ -136,7 +130,6 @@
     }
 
     @-webkit-keyframes headerEntrance {
-
       0% {
         opacity: 0;
         -webkit-transform: translateY(-18px);
@@ -149,7 +142,6 @@
     }
 
     @keyframes headerEntrance {
-
       0% {
         opacity: 0;
         transform: translateY(-18px);
@@ -162,9 +154,7 @@
     }
 
 
-    /* ==============================
-       STICKY NAVIGATION
-    ============================== */
+    /* NAVIGATION */
 
     .sticky-controls {
       position: sticky;
@@ -193,9 +183,7 @@
     }
 
 
-    /* ==============================
-       LANGUAGE
-    ============================== */
+    /* LANGUAGE */
 
     .language-container {
       display: flex;
@@ -239,9 +227,7 @@
     }
 
 
-    /* ==============================
-       FILTERS
-    ============================== */
+    /* FILTERS */
 
     .filter-container {
       display: flex;
@@ -299,9 +285,7 @@
     }
 
 
-    /* ==============================
-       COMPACT NAV
-    ============================== */
+    /* COMPACT NAV */
 
     .sticky-controls.compact {
       padding-top: 5px;
@@ -346,9 +330,7 @@
     }
 
 
-    /* ==============================
-       SECTION HEADINGS
-    ============================== */
+    /* SECTION */
 
     .section-heading {
       margin: 12px 0 17px;
@@ -392,9 +374,7 @@
     }
 
 
-    /* ==============================
-       MENU CARDS
-    ============================== */
+    /* CARDS */
 
     .menu-card {
       background:
@@ -423,11 +403,6 @@
       transform: scale(0.985);
     }
 
-
-    /* ==============================
-       FADE ANIMATION
-    ============================== */
-
     .menu-card.fade-item,
     .section-heading.fade-item {
       opacity: 0;
@@ -443,9 +418,7 @@
     }
 
 
-    /* ==============================
-       IMAGES
-    ============================== */
+    /* IMAGES */
 
     .image-wrap {
       width: 100%;
@@ -487,9 +460,7 @@
     }
 
 
-    /* ==============================
-       CARD CONTENT
-    ============================== */
+    /* CONTENT */
 
     .card-content {
       padding: 17px 20px 15px;
@@ -503,29 +474,34 @@
       justify-content: space-between;
 
       gap: 12px;
+
       margin-bottom: 7px;
     }
 
     .item-title {
       margin: 0;
+
       color: #381705;
+
       font-size: 1.45rem;
       font-weight: 800;
+
       flex: 1;
     }
 
     .item-desc {
       margin: 0;
+
       color: #694322;
+
       font-size: 0.95rem;
       line-height: 1.8;
+
       font-weight: 600;
     }
 
 
-    /* ==============================
-       PRICE
-    ============================== */
+    /* PRICE */
 
     .price {
       flex: 0 0 auto;
@@ -573,6 +549,7 @@
           0 3px 12px rgba(211, 154, 77, 0.65),
           0 0 7px rgba(211, 154, 77, 0.25);
       }
+
     }
 
     @keyframes priceGlow {
@@ -588,12 +565,11 @@
           0 3px 12px rgba(211, 154, 77, 0.65),
           0 0 7px rgba(211, 154, 77, 0.25);
       }
+
     }
 
 
-    /* ==============================
-       CALORIES
-    ============================== */
+    /* CALORIES */
 
     .calories {
       margin-top: 12px;
@@ -622,9 +598,7 @@
     }
 
 
-    /* ==============================
-       FOOTER
-    ============================== */
+    /* FOOTER */
 
     .footer {
       margin-top: 35px;
@@ -668,8 +642,6 @@
 
       margin: 16px auto;
 
-      border-radius: 5px;
-
       background:
         linear-gradient(
           90deg,
@@ -688,8 +660,12 @@
       font-weight: 600;
     }
 
-
-    /* PHONE */
+    .phone-label {
+      margin-top: 15px;
+      color: #75471f;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
 
     .footer-phone {
       display: inline-flex;
@@ -703,7 +679,6 @@
       padding: 10px 18px;
 
       border-radius: 25px;
-
       border: 1px solid #a86b27;
 
       background:
@@ -718,7 +693,6 @@
       text-decoration: none;
 
       font-family: Arial, 'Cairo', sans-serif;
-
       font-size: 0.95rem;
       font-weight: 800;
 
@@ -726,23 +700,6 @@
 
       box-shadow:
         0 5px 12px rgba(68, 30, 8, 0.30);
-
-      transition:
-        transform 0.15s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .footer-phone:active {
-      transform: scale(0.96);
-    }
-
-    .phone-label {
-      margin-top: 15px;
-
-      color: #75471f;
-
-      font-size: 0.78rem;
-      font-weight: 700;
     }
 
 
@@ -751,9 +708,7 @@
     }
 
 
-    /* ==============================
-       FULLSCREEN IMAGE
-    ============================== */
+    /* IMAGE MODAL */
 
     .modal {
       display: none;
@@ -767,8 +722,7 @@
       width: 100vw;
       height: 100vh;
 
-      background:
-        rgba(5, 3, 2, 0.97);
+      background: rgba(5, 3, 2, 0.97);
 
       align-items: center;
       justify-content: center;
@@ -804,7 +758,6 @@
     }
 
     @-webkit-keyframes photoEntrance {
-
       0% {
         opacity: 0;
         -webkit-transform: scale(0.92);
@@ -817,7 +770,6 @@
     }
 
     @keyframes photoEntrance {
-
       0% {
         opacity: 0;
         transform: scale(0.92);
@@ -850,19 +802,8 @@
       font-size: 38px;
 
       cursor: pointer;
-
-      box-shadow:
-        0 4px 15px rgba(0, 0, 0, 0.7);
     }
 
-    .close-btn:active {
-      transform: scale(0.92);
-    }
-
-
-    /* ==============================
-       SMALL SCREEN
-    ============================== */
 
     @media (max-width: 480px) {
 
@@ -906,6 +847,7 @@
         padding: 5px 9px;
         font-size: 0.78rem;
       }
+
     }
 
   </style>
@@ -918,9 +860,7 @@
 <div class="container">
 
 
-  <!-- ==============================
-       HEADER
-  ============================== -->
+  <!-- HEADER -->
 
   <div class="header">
 
@@ -939,10 +879,7 @@
   </div>
 
 
-
-  <!-- ==============================
-       CONTROLS
-  ============================== -->
+  <!-- NAVIGATION -->
 
   <div
     class="sticky-controls"
@@ -1008,10 +945,9 @@
   </div>
 
 
-
-  <!-- ==============================
+  <!-- ===============================
        PASTRIES
-  ============================== -->
+  ================================ -->
 
   <div class="section-heading">
 
@@ -1030,8 +966,187 @@
   </div>
 
 
+  <!-- مسخن -->
 
-  <!-- فطيرة عكاوي -->
+  <div class="menu-card pastries">
+
+    <div class="image-wrap">
+      <img
+        class="menu-image"
+        src="musken .jpeg"
+        alt="مسخن"
+        data-ar-alt="مسخن"
+        data-en-alt="Musakhan">
+    </div>
+
+    <div class="card-content">
+
+      <div class="title-price-row">
+
+        <h2
+          class="item-title"
+          data-ar="مسخن"
+          data-en="Musakhan">
+          مسخن
+        </h2>
+
+        <span
+          class="price"
+          data-ar="15 ريال"
+          data-en="15 SAR">
+          15 ريال
+        </span>
+
+      </div>
+
+      <p
+        class="item-desc"
+        data-ar="لفائف مسخن مقرمشة بحشوة الدجاج والبصل والسماق، محضّرة بنكهة غنية ومميزة."
+        data-en="Crispy Musakhan rolls filled with seasoned chicken, onions, and sumac.">
+        لفائف مسخن مقرمشة بحشوة الدجاج والبصل والسماق، محضّرة بنكهة غنية ومميزة.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- شباتي لبنة وعسل -->
+
+  <div class="menu-card pastries">
+
+    <div class="image-wrap">
+      <img
+        class="menu-image"
+        src="chpata honey.jpeg"
+        alt="شباتي لبنة وعسل"
+        data-ar-alt="شباتي لبنة وعسل"
+        data-en-alt="Labneh and honey chapati">
+    </div>
+
+    <div class="card-content">
+
+      <div class="title-price-row">
+
+        <h2
+          class="item-title"
+          data-ar="شباتي لبنة وعسل"
+          data-en="Labneh & Honey Chapati">
+          شباتي لبنة وعسل
+        </h2>
+
+        <span
+          class="price"
+          data-ar="7 ريال"
+          data-en="7 SAR">
+          7 ريال
+        </span>
+
+      </div>
+
+      <p
+        class="item-desc"
+        data-ar="شباتي طازج محشو باللبنة الكريمية ومزيّن بالعسل."
+        data-en="Fresh chapati filled with creamy labneh and drizzled with honey.">
+        شباتي طازج محشو باللبنة الكريمية ومزيّن بالعسل.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- شباتي لبنة وزعتر -->
+
+  <div class="menu-card pastries">
+
+    <div class="image-wrap">
+      <img
+        class="menu-image"
+        src="chpata zatar.jpeg"
+        alt="شباتي لبنة وزعتر"
+        data-ar-alt="شباتي لبنة وزعتر"
+        data-en-alt="Labneh and zaatar chapati">
+    </div>
+
+    <div class="card-content">
+
+      <div class="title-price-row">
+
+        <h2
+          class="item-title"
+          data-ar="شباتي لبنة وزعتر"
+          data-en="Labneh & Zaatar Chapati">
+          شباتي لبنة وزعتر
+        </h2>
+
+        <span
+          class="price"
+          data-ar="7 ريال"
+          data-en="7 SAR">
+          7 ريال
+        </span>
+
+      </div>
+
+      <p
+        class="item-desc"
+        data-ar="شباتي طازج محشو باللبنة الكريمية والزعتر بنكهته المميزة."
+        data-en="Fresh chapati filled with creamy labneh and aromatic zaatar.">
+        شباتي طازج محشو باللبنة الكريمية والزعتر بنكهته المميزة.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- شباتي جبنة وشيبس -->
+
+  <div class="menu-card pastries">
+
+    <div class="image-wrap">
+      <img
+        class="menu-image"
+        src="chpata chips.jpeg"
+        alt="شباتي جبنة وشيبس"
+        data-ar-alt="شباتي جبنة وشيبس"
+        data-en-alt="Cheese and chips chapati">
+    </div>
+
+    <div class="card-content">
+
+      <div class="title-price-row">
+
+        <h2
+          class="item-title"
+          data-ar="شباتي جبنة وشيبس"
+          data-en="Cheese & Chips Chapati">
+          شباتي جبنة وشيبس
+        </h2>
+
+        <span
+          class="price"
+          data-ar="7 ريال"
+          data-en="7 SAR">
+          7 ريال
+        </span>
+
+      </div>
+
+      <p
+        class="item-desc"
+        data-ar="شباتي طازج محشو بالجبنة وقطع الشيبس المقرمشة."
+        data-en="Fresh chapati filled with cheese and crunchy potato chips.">
+        شباتي طازج محشو بالجبنة وقطع الشيبس المقرمشة.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- عكاوي -->
 
   <div class="menu-card pastries">
 
@@ -1083,8 +1198,7 @@
   </div>
 
 
-
-  <!-- فطيرة شيبس -->
+  <!-- شيبس -->
 
   <div class="menu-card pastries">
 
@@ -1136,8 +1250,7 @@
   </div>
 
 
-
-  <!-- فطيرة بيتزا ببروني -->
+  <!-- بيتزا ببروني -->
 
   <div class="menu-card pastries">
 
@@ -1189,8 +1302,7 @@
   </div>
 
 
-
-  <!-- فطيرة بيتزا -->
+  <!-- بيتزا -->
 
   <div class="menu-card pastries">
 
@@ -1242,8 +1354,7 @@
   </div>
 
 
-
-  <!-- فطيرة بيتزا خضار -->
+  <!-- بيتزا خضار - UPDATED TO 15 -->
 
   <div class="menu-card pastries">
 
@@ -1269,9 +1380,9 @@
 
         <span
           class="price"
-          data-ar="12 ريال"
-          data-en="12 SAR">
-          12 ريال
+          data-ar="15 ريال"
+          data-en="15 SAR">
+          15 ريال
         </span>
 
       </div>
@@ -1295,8 +1406,7 @@
   </div>
 
 
-
-  <!-- فطيرة سبانخ -->
+  <!-- سبانخ -->
 
   <div class="menu-card pastries">
 
@@ -1346,7 +1456,6 @@
     </div>
 
   </div>
-
 
 
   <!-- ثلاثة أجبان -->
@@ -1401,7 +1510,6 @@
   </div>
 
 
-
   <!-- لبنة وعسل -->
 
   <div class="menu-card pastries">
@@ -1452,7 +1560,6 @@
     </div>
 
   </div>
-
 
 
   <!-- البيستو -->
@@ -1507,7 +1614,6 @@
   </div>
 
 
-
   <!-- زعتر ولبنة -->
 
   <div class="menu-card pastries">
@@ -1558,7 +1664,6 @@
     </div>
 
   </div>
-
 
 
   <!-- زعتر -->
@@ -1613,10 +1718,9 @@
   </div>
 
 
-
-  <!-- ==============================
+  <!-- ===============================
        HOT DRINKS
-  ============================== -->
+  ================================ -->
 
   <div class="section-heading">
 
@@ -1633,7 +1737,6 @@
     </p>
 
   </div>
-
 
 
   <!-- دلة قهوة -->
@@ -1681,7 +1784,6 @@
   </div>
 
 
-
   <!-- شاي أخضر -->
 
   <div class="menu-card hot-drinks">
@@ -1725,7 +1827,6 @@
     </div>
 
   </div>
-
 
 
   <!-- براد طائفي -->
@@ -1773,7 +1874,6 @@
   </div>
 
 
-
   <!-- شاي قزاز -->
 
   <div class="menu-card hot-drinks">
@@ -1817,7 +1917,6 @@
     </div>
 
   </div>
-
 
 
   <!-- براد شاي -->
@@ -1865,10 +1964,9 @@
   </div>
 
 
-
-  <!-- ==============================
+  <!-- ===============================
        COLD DRINKS
-  ============================== -->
+  ================================ -->
 
   <div class="section-heading">
 
@@ -1885,7 +1983,6 @@
     </p>
 
   </div>
-
 
 
   <!-- كركديه -->
@@ -1933,8 +2030,7 @@
   </div>
 
 
-
-  <!-- آيس تي بالخوخ -->
+  <!-- آيس تي بالخوخ - UPDATED TO 12 -->
 
   <div class="menu-card cold-drinks">
 
@@ -1960,9 +2056,9 @@
 
         <span
           class="price"
-          data-ar="15 ريال"
-          data-en="15 SAR">
-          15 ريال
+          data-ar="12 ريال"
+          data-en="12 SAR">
+          12 ريال
         </span>
 
       </div>
@@ -1979,10 +2075,7 @@
   </div>
 
 
-
-  <!-- ==============================
-       FOOTER
-  ============================== -->
+  <!-- FOOTER -->
 
   <footer class="footer">
 
@@ -2009,14 +2102,12 @@
       شكرًا لاختياركم عتيق، نتشرّف بخدمتكم 🤎
     </p>
 
-
     <div
       class="phone-label"
       data-ar="للتواصل والطلبات"
       data-en="Contact & Orders">
       للتواصل والطلبات
     </div>
-
 
     <a
       href="tel:0590900933"
@@ -2027,14 +2118,10 @@
 
   </footer>
 
-
 </div>
 
 
-
-<!-- ==============================
-     FULLSCREEN IMAGE
-============================== -->
+<!-- IMAGE MODAL -->
 
 <div
   id="imageModal"
@@ -2058,7 +2145,6 @@
 </div>
 
 
-
 <script>
 
 document.addEventListener(
@@ -2066,9 +2152,7 @@ document.addEventListener(
   function () {
 
 
-    /* ==============================
-       LANGUAGE
-    ============================== */
+    /* LANGUAGE */
 
     var currentLanguage = "ar";
 
@@ -2088,15 +2172,8 @@ document.addEventListener(
 
       if (language === "en") {
 
-        html.setAttribute(
-          "lang",
-          "en"
-        );
-
-        html.setAttribute(
-          "dir",
-          "ltr"
-        );
+        html.setAttribute("lang", "en");
+        html.setAttribute("dir", "ltr");
 
         document.title =
           "Ateeq Tea & Pastries";
@@ -2108,15 +2185,8 @@ document.addEventListener(
 
       else {
 
-        html.setAttribute(
-          "lang",
-          "ar"
-        );
-
-        html.setAttribute(
-          "dir",
-          "rtl"
-        );
+        html.setAttribute("lang", "ar");
+        html.setAttribute("dir", "rtl");
 
         document.title =
           "عتيق شاي ومخبوزات";
@@ -2188,9 +2258,7 @@ document.addEventListener(
 
 
 
-    /* ==============================
-       FILTER MENU
-    ============================== */
+    /* FILTERS */
 
     var filterButtons =
       document.querySelectorAll(
@@ -2312,9 +2380,7 @@ document.addEventListener(
 
 
 
-    /* ==============================
-       COMPACT NAV
-    ============================== */
+    /* COMPACT NAV */
 
     var stickyControls =
       document.getElementById(
@@ -2330,9 +2396,7 @@ document.addEventListener(
         0;
 
 
-      if (
-        scrollPosition > 130
-      ) {
+      if (scrollPosition > 130) {
 
         stickyControls
           .classList
@@ -2358,9 +2422,7 @@ document.addEventListener(
 
 
 
-    /* ==============================
-       FADE-IN
-    ============================== */
+    /* FADE-IN */
 
     var fadeItems =
       document.querySelectorAll(
@@ -2381,9 +2443,7 @@ document.addEventListener(
     }
 
 
-    if (
-      "IntersectionObserver" in window
-    ) {
+    if ("IntersectionObserver" in window) {
 
       var fadeObserver =
         new IntersectionObserver(
@@ -2410,7 +2470,6 @@ document.addEventListener(
                   .add(
                     "fade-visible"
                   );
-
 
                 observer.unobserve(
                   entries[e].target
@@ -2463,9 +2522,7 @@ document.addEventListener(
 
 
 
-    /* ==============================
-       IMAGE VIEWER
-    ============================== */
+    /* IMAGE VIEWER */
 
     var images =
       document.querySelectorAll(
@@ -2494,28 +2551,27 @@ document.addEventListener(
       j++
     ) {
 
-      images[j]
-        .addEventListener(
-          "click",
-          function () {
+      images[j].addEventListener(
+        "click",
+        function () {
 
-            modalImage.src =
-              this.src;
+          modalImage.src =
+            this.src;
 
-            modalImage.alt =
-              this.alt;
+          modalImage.alt =
+            this.alt;
 
-            modal
-              .classList
-              .add("show");
+          modal
+            .classList
+            .add("show");
 
-            document.body
-              .style
-              .overflow =
-              "hidden";
+          document.body
+            .style
+            .overflow =
+            "hidden";
 
-          }
-        );
+        }
+      );
 
     }
 
@@ -2526,74 +2582,68 @@ document.addEventListener(
         .classList
         .remove("show");
 
-      modalImage.src =
-        "";
+      modalImage.src = "";
 
       document.body
         .style
-        .overflow =
-        "";
+        .overflow = "";
 
     }
 
 
-    closeButton
-      .addEventListener(
-        "click",
-        function (event) {
+    closeButton.addEventListener(
+      "click",
+      function (event) {
 
-          event.stopPropagation();
+        event.stopPropagation();
+
+        closeImage();
+
+      }
+    );
+
+
+    modal.addEventListener(
+      "click",
+      function (event) {
+
+        if (
+          event.target === modal
+        ) {
 
           closeImage();
 
         }
-      );
+
+      }
+    );
 
 
-    modal
-      .addEventListener(
-        "click",
-        function (event) {
+    modalImage.addEventListener(
+      "click",
+      function (event) {
 
-          if (
-            event.target === modal
-          ) {
+        event.stopPropagation();
 
-            closeImage();
-
-          }
-
-        }
-      );
+      }
+    );
 
 
-    modalImage
-      .addEventListener(
-        "click",
-        function (event) {
+    document.addEventListener(
+      "keydown",
+      function (event) {
 
-          event.stopPropagation();
+        if (
+          event.key === "Escape" ||
+          event.keyCode === 27
+        ) {
 
-        }
-      );
-
-
-    document
-      .addEventListener(
-        "keydown",
-        function (event) {
-
-          if (
-            event.key === "Escape" ||
-            event.keyCode === 27
-          ) {
-
-            closeImage();
-
-          }
+          closeImage();
 
         }
-      );
+
+      }
+    );
 
 
   }
