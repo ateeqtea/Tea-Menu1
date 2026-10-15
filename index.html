@@ -1,3020 +1,1261 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"
-  >
-
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="عتيق">
-
-  <title>عتيق شاي ومخبوزات</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    html {
-      min-height: 100%;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      padding: 18px;
-      min-height: 100vh;
-
-      font-family: 'Cairo', Arial, sans-serif;
-      color: #2d180c;
-
-      background-color: #160c06;
-
-      background-image:
-        linear-gradient(
-          rgba(20, 8, 3, 0.10),
-          rgba(20, 8, 3, 0.10)
-        ),
-        url("wood-bg.jpg");
-
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-    }
-
-
-    /* ==========================
-       MAIN CONTAINER
-    ========================== */
-
-    .container {
-      width: 100%;
-      max-width: 650px;
-      margin: 0 auto;
-    }
-
-
-    /* ==========================
-       HEADER
-    ========================== */
-
-    .header {
-      text-align: center;
-      padding: 24px 15px;
-      margin-bottom: 16px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #f7e9ce,
-          #e7c995
-        );
-
-      border: 2px solid #a86b27;
-      border-radius: 18px;
-
-      box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.55);
-
-      -webkit-animation:
-        headerEntrance 0.8s ease-out both;
-
-      animation:
-        headerEntrance 0.8s ease-out both;
-    }
-
-    .header h1 {
-      margin: 0;
-      color: #3a1806;
-      font-size: 2rem;
-      font-weight: 800;
-    }
-
-    .header h1::after {
-      content: "";
-      display: block;
-
-      width: 75px;
-      height: 3px;
-
-      margin: 10px auto 5px;
-
-      border-radius: 10px;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          #a96c28,
-          #e5b86a,
-          #a96c28,
-          transparent
-        );
-    }
-
-    .header p {
-      margin: 6px 0 0;
-      color: #71441e;
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    @-webkit-keyframes headerEntrance {
-
-      0% {
-        opacity: 0;
-        -webkit-transform: translateY(-18px);
-      }
-
-      100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-      }
-
-    }
-
-    @keyframes headerEntrance {
-
-      0% {
-        opacity: 0;
-        transform: translateY(-18px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-    }
-
-
-    /* ==========================
-       NAVIGATION
-    ========================== */
-
-    .sticky-controls {
-      position: sticky;
-      top: 0;
-      z-index: 5000;
-
-      padding: 8px 5px 11px;
-      margin-bottom: 18px;
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(22, 12, 6, 0.98) 0%,
-          rgba(22, 12, 6, 0.95) 82%,
-          rgba(22, 12, 6, 0) 100%
-        );
-
-      transition: padding 0.25s ease;
-    }
-
-    .sticky-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-
-      transition: all 0.25s ease;
-    }
-
-
-    /* LANGUAGE */
-
-    .language-container {
-      display: flex;
-      justify-content: center;
-    }
-
-    .language-btn {
-      min-width: 135px;
-      min-height: 44px;
-
-      padding: 8px 18px;
-
-      border: 2px solid #d39a4d;
-      border-radius: 25px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #5b2e10,
-          #2d1306
-        );
-
-      color: #ffe7b5;
-
-      font-family: 'Cairo', Arial, sans-serif;
-      font-size: 0.95rem;
-      font-weight: 800;
-
-      cursor: pointer;
-
-      box-shadow:
-        0 5px 14px rgba(0, 0, 0, 0.45);
-
-      transition:
-        transform 0.15s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .language-btn:active {
-      transform: scale(0.95);
-    }
-
-
-    /* FILTERS */
-
-    .filter-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .filter-btn {
-      border: 2px solid #c28a42;
-
-      background:
-        linear-gradient(
-          145deg,
-          #f8e9cb,
-          #dfbd83
-        );
-
-      color: #351505;
-
-      padding: 9px 17px;
-      min-height: 46px;
-
-      border-radius: 30px;
-
-      font-family: 'Cairo', Arial, sans-serif;
-      font-size: 0.92rem;
-      font-weight: 800;
-
-      white-space: nowrap;
-      cursor: pointer;
-
-      box-shadow:
-        0 5px 14px rgba(0, 0, 0, 0.45);
-
-      transition:
-        transform 0.15s ease,
-        background 0.2s ease;
-    }
-
-    .filter-btn:active {
-      transform: scale(0.95);
-    }
-
-    .filter-btn.active {
-      background:
-        linear-gradient(
-          145deg,
-          #623413,
-          #321607
-        );
-
-      color: #ffe7b5;
-      border-color: #d99b46;
-    }
-
-
-    /* COMPACT NAV */
-
-    .sticky-controls.compact {
-      padding-top: 5px;
-      padding-bottom: 7px;
-    }
-
-    .sticky-controls.compact .sticky-inner {
-      flex-direction: row;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .sticky-controls.compact .language-container {
-      flex: 0 0 auto;
-    }
-
-    .sticky-controls.compact .language-btn {
-      min-width: auto;
-      min-height: 38px;
-
-      padding: 6px 10px;
-
-      font-size: 0.75rem;
-    }
-
-    .sticky-controls.compact .filter-container {
-      flex: 1;
-
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-
-      overflow-x: auto;
-
-      gap: 5px;
-      padding-bottom: 2px;
-    }
-
-    .sticky-controls.compact .filter-container::-webkit-scrollbar {
-      display: none;
-    }
-
-    .sticky-controls.compact .filter-btn {
-      min-height: 38px;
-
-      padding: 6px 11px;
-
-      font-size: 0.75rem;
-
-      flex: 0 0 auto;
-    }
-
-
-    /* ==========================
-       SECTION HEADINGS
-    ========================== */
-
-    .section-heading {
-      margin: 12px 0 17px;
-      padding: 15px 18px;
-
-      text-align: center;
-
-      border-radius: 16px;
-
-      border:
-        1px solid rgba(216, 161, 91, 0.65);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(65, 31, 11, 0.96),
-          rgba(35, 15, 5, 0.96)
-        );
-
-      color: #ffe6b3;
-
-      box-shadow:
-        0 7px 18px rgba(0, 0, 0, 0.42);
-
-      transition:
-        opacity 0.55s ease,
-        transform 0.55s ease;
-    }
-
-    .section-heading h2 {
-      margin: 0;
-      font-size: 1.25rem;
-      font-weight: 800;
-    }
-
-    .section-heading p {
-      margin: 3px 0 0;
-      color: #dcb77b;
-      font-size: 0.75rem;
-      font-weight: 600;
-    }
-
-
-    /* ==========================
-       MENU CARDS
-    ========================== */
-
-    .menu-card {
-      background:
-        linear-gradient(
-          160deg,
-          #f9ebcf,
-          #e7c994
-        );
-
-      border: 1px solid #b47732;
-      border-radius: 18px;
-
-      overflow: hidden;
-      margin-bottom: 22px;
-
-      box-shadow:
-        0 10px 28px rgba(0, 0, 0, 0.60);
-
-      transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        opacity 0.55s ease;
-    }
-
-    .menu-card:active {
-      transform: scale(0.985);
-    }
-
-
-    /* FADE */
-
-    .menu-card.fade-item,
-    .section-heading.fade-item {
-      opacity: 0;
-
-      -webkit-transform: translateY(20px);
-      transform: translateY(20px);
-    }
-
-    .menu-card.fade-item.fade-visible,
-    .section-heading.fade-item.fade-visible {
-      opacity: 1;
-
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-
-
-    /* ==========================
-       IMAGES
-    ========================== */
-
-    .image-wrap {
-      width: 100%;
-      overflow: hidden;
-      background: #1d0d05;
-    }
-
-    .menu-image {
-      width: 100%;
-      height: 300px;
-
-      object-fit: cover;
-      display: block;
-
-      cursor: pointer;
-
-      transition:
-        transform 0.35s ease,
-        opacity 0.2s ease;
-    }
-
-    .menu-image:active {
-      transform: scale(1.025);
-      opacity: 0.92;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-
-      .menu-card:hover .menu-image {
-        transform: scale(1.035);
-      }
-
-      .menu-card:hover {
-        transform: translateY(-3px);
-
-        box-shadow:
-          0 14px 34px rgba(0, 0, 0, 0.68);
-      }
-
-    }
-
-
-    /* ==========================
-       CARD CONTENT
-    ========================== */
-
-    .card-content {
-      padding: 17px 20px 15px;
-    }
-
-    .title-price-row {
-      width: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 12px;
-
-      margin-bottom: 7px;
-    }
-
-    .item-title {
-      margin: 0;
-
-      color: #381705;
-
-      font-size: 1.45rem;
-      font-weight: 800;
-
-      flex: 1;
-    }
-
-    .item-desc {
-      margin: 0;
-
-      color: #694322;
-
-      font-size: 0.95rem;
-      line-height: 1.8;
-
-      font-weight: 600;
-    }
-
-
-    /* ==========================
-       NORMAL PRICE
-    ========================== */
-
-    .price {
-      flex: 0 0 auto;
-
-      min-width: 72px;
-
-      padding: 6px 12px;
-
-      text-align: center;
-
-      border-radius: 18px;
-      border: 1px solid #d39a4d;
-
-      background:
-        linear-gradient(
-          145deg,
-          #613313,
-          #351707
-        );
-
-      color: #ffe9bd;
-
-      font-size: 0.88rem;
-      font-weight: 800;
-
-      white-space: nowrap;
-
-      -webkit-animation:
-        priceGlow 3.8s ease-in-out infinite;
-
-      animation:
-        priceGlow 3.8s ease-in-out infinite;
-    }
-
-    @-webkit-keyframes priceGlow {
-
-      0%,
-      100% {
-        box-shadow:
-          0 3px 8px rgba(60, 25, 5, 0.28);
-      }
-
-      50% {
-        box-shadow:
-          0 3px 12px rgba(211, 154, 77, 0.65),
-          0 0 7px rgba(211, 154, 77, 0.25);
-      }
-
-    }
-
-    @keyframes priceGlow {
-
-      0%,
-      100% {
-        box-shadow:
-          0 3px 8px rgba(60, 25, 5, 0.28);
-      }
-
-      50% {
-        box-shadow:
-          0 3px 12px rgba(211, 154, 77, 0.65),
-          0 0 7px rgba(211, 154, 77, 0.25);
-      }
-
-    }
-
-
-    /* ==========================
-       TWO-SIZE COFFEE PRICE
-    ========================== */
-
-    .dual-price {
-      flex: 0 0 auto;
-
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-
-      direction: ltr;
-
-      padding: 7px 11px;
-
-      border-radius: 20px;
-      border: 1px solid #d39a4d;
-
-      background:
-        linear-gradient(
-          145deg,
-          #613313,
-          #351707
-        );
-
-      color: #ffe9bd;
-
-      box-shadow:
-        0 4px 12px rgba(60, 25, 5, 0.35);
-
-      -webkit-animation:
-        priceGlow 3.8s ease-in-out infinite;
-
-      animation:
-        priceGlow 3.8s ease-in-out infinite;
-    }
-
-    .size-option {
-      min-width: 45px;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-
-      line-height: 1;
-    }
-
-    .size-number {
-      font-family: Arial, sans-serif;
-      font-size: 1.05rem;
-      font-weight: 800;
-    }
-
-    .price-slash {
-      padding: 0 4px;
-
-      font-family: Arial, sans-serif;
-      font-size: 1.05rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .cup-large {
-      display: block;
-
-      margin-top: 6px;
-
-      font-size: 1.35rem;
-      line-height: 1;
-    }
-
-    .cup-small {
-      display: block;
-
-      margin-top: 8px;
-
-      font-size: 0.95rem;
-      line-height: 1;
-    }
-
-    .size-label {
-      display: block;
-
-      margin-top: 5px;
-
-      font-family: 'Cairo', Arial, sans-serif;
-      font-size: 0.57rem;
-      font-weight: 700;
-
-      color: #f0c887;
-
-      line-height: 1.25;
-    }
-
-
-    /* ==========================
-       CALORIES
-    ========================== */
-
-    .calories {
-      margin-top: 12px;
-      padding-top: 8px;
-
-      border-top:
-        1px solid rgba(120, 73, 32, 0.18);
-
-      color: #8a5628;
-
-      font-family:
-        Arial,
-        'Cairo',
-        sans-serif;
-
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
-
-    html[dir="rtl"] .calories {
-      text-align: left;
-    }
-
-    html[dir="ltr"] .calories {
-      text-align: right;
-    }
-
-
-    /* ==========================
-       FOOTER
-    ========================== */
-
-    .footer {
-      margin-top: 35px;
-      margin-bottom: 10px;
-
-      padding: 25px 20px;
-
-      text-align: center;
-
-      border-radius: 18px;
-      border: 1px solid #b67b39;
-
-      background:
-        linear-gradient(
-          150deg,
-          rgba(247, 233, 206, 0.98),
-          rgba(220, 187, 132, 0.98)
-        );
-
-      box-shadow:
-        0 10px 28px rgba(0, 0, 0, 0.55);
-    }
-
-    .footer-logo {
-      margin: 0;
-
-      color: #381705;
-
-      font-size: 1.45rem;
-      font-weight: 800;
-    }
-
-    .footer-tagline {
-      margin: 5px 0 0;
-
-      color: #75471f;
-
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    .footer-divider {
-      width: 70px;
-      height: 2px;
-
-      margin: 16px auto;
-
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          #aa702f,
-          #e2ae60,
-          #aa702f,
-          transparent
-        );
-    }
-
-    .footer-message {
-      margin: 0;
-
-      color: #5f3416;
-
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .phone-label {
-      margin-top: 15px;
-
-      color: #75471f;
-
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
-
-    .footer-phone {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      gap: 8px;
-
-      margin-top: 17px;
-
-      padding: 10px 18px;
-
-      border-radius: 25px;
-      border: 1px solid #a86b27;
-
-      background:
-        linear-gradient(
-          145deg,
-          #613313,
-          #351707
-        );
-
-      color: #ffe9bd;
-
-      text-decoration: none;
-
-      font-family: Arial, 'Cairo', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 800;
-
-      direction: ltr;
-
-      box-shadow:
-        0 5px 12px rgba(68, 30, 8, 0.30);
-    }
-
-
-    .hidden {
-      display: none !important;
-    }
-
-
-    /* ==========================
-       FULLSCREEN IMAGE
-    ========================== */
-
-    .modal {
-      display: none;
-
-      position: fixed;
-      z-index: 999999;
-
-      top: 0;
-      left: 0;
-
-      width: 100vw;
-      height: 100vh;
-
-      background:
-        rgba(5, 3, 2, 0.97);
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 10px;
-    }
-
-    .modal.show {
-      display: flex;
-    }
-
-    .modal-img {
-      display: block;
-
-      width: auto;
-      height: auto;
-
-      max-width: 98vw;
-      max-height: 95vh;
-
-      object-fit: contain;
-
-      border-radius: 8px;
-
-      box-shadow:
-        0 0 45px rgba(0, 0, 0, 0.95);
-
-      -webkit-animation:
-        photoEntrance 0.25s ease-out;
-
-      animation:
-        photoEntrance 0.25s ease-out;
-    }
-
-    @-webkit-keyframes photoEntrance {
-
-      0% {
-        opacity: 0;
-        -webkit-transform: scale(0.92);
-      }
-
-      100% {
-        opacity: 1;
-        -webkit-transform: scale(1);
-      }
-
-    }
-
-    @keyframes photoEntrance {
-
-      0% {
-        opacity: 0;
-        transform: scale(0.92);
-      }
-
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-    }
-
-    .close-btn {
-      position: fixed;
-
-      top: 16px;
-      right: 18px;
-
-      width: 56px;
-      height: 56px;
-
-      z-index: 1000000;
-
-      border: 2px solid #d29a4e;
-      border-radius: 50%;
-
-      background:
-        rgba(48, 21, 7, 0.92);
-
-      color: white;
-
-      font-size: 38px;
-
-      cursor: pointer;
-    }
-
-
-    /* ==========================
-       MOBILE
-    ========================== */
-
-    @media (max-width: 480px) {
-
-      body {
-        padding: 12px;
-      }
-
-      .header {
-        padding: 20px 12px;
-      }
-
-      .header h1 {
-        font-size: 1.7rem;
-      }
-
-      .filter-container {
-        gap: 6px;
-      }
-
-      .filter-btn {
-        font-size: 0.78rem;
-
-        padding: 8px 12px;
-
-        min-height: 42px;
-      }
-
-      .language-btn {
-        font-size: 0.88rem;
-        min-height: 40px;
-      }
-
-      .menu-image {
-        height: 270px;
-      }
-
-      .item-title {
-        font-size: 1.25rem;
-      }
-
-      .price {
-        min-width: 62px;
-
-        padding: 5px 9px;
-
-        font-size: 0.78rem;
-      }
-
-      .dual-price {
-        padding: 6px 8px;
-      }
-
-      .size-option {
-        min-width: 38px;
-      }
-
-      .size-number {
-        font-size: 0.95rem;
-      }
-
-      .cup-large {
-        font-size: 1.2rem;
-      }
-
-      .cup-small {
-        font-size: 0.82rem;
-      }
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="عتيق">
+<title>عتيق شاي ومخبوزات</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 18px;
+  min-height: 100vh;
+  font-family: 'Cairo', Arial, sans-serif;
+  color: #2d180c;
+  background-color: #160c06;
+  background-image: linear-gradient(
+    rgba(20,8,3,.10), rgba(20,8,3,.10)
+  ), url("wood-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 24px 15px;
+  margin-bottom: 16px;
+  background: linear-gradient(145deg,#f7e9ce,#e7c995);
+  border: 2px solid #a86b27;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.55);
+  -webkit-animation: headerEntrance .8s ease-out both;
+  animation: headerEntrance .8s ease-out both;
+}
+.header h1 {
+  margin: 0;
+  color: #3a1806;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.header h1::after {
+  content: "";
+  display: block;
+  width: 75px;
+  height: 3px;
+  margin: 10px auto 5px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,transparent,#a96c28,#e5b86a,#a96c28,transparent
+  );
+}
+.header p {
+  margin: 6px 0 0;
+  color: #71441e;
+  font-size: .95rem;
+  font-weight: 700;
+}
+@-webkit-keyframes headerEntrance {
+  0% {opacity:0;-webkit-transform:translateY(-18px)}
+  100% {opacity:1;-webkit-transform:translateY(0)}
+}
+@keyframes headerEntrance {
+  0% {opacity:0;transform:translateY(-18px)}
+  100% {opacity:1;transform:translateY(0)}
+}
+
+/* NAVIGATION */
+.sticky-controls {
+  position: sticky;
+  top: 0;
+  z-index: 5000;
+  padding: 8px 5px 11px;
+  margin-bottom: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(22,12,6,.98) 0%,
+    rgba(22,12,6,.95) 82%,
+    rgba(22,12,6,0) 100%
+  );
+  transition: padding .25s ease;
+}
+.sticky-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all .25s ease;
+}
+.language-container {
+  display: flex;
+  justify-content: center;
+}
+.language-btn {
+  min-width: 135px;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 2px solid #d39a4d;
+  border-radius: 25px;
+  background: linear-gradient(145deg,#5b2e10,#2d1306);
+  color: #ffe7b5;
+  font-family: 'Cairo',Arial,sans-serif;
+  font-size: .95rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(0,0,0,.45);
+  transition: transform .15s ease,box-shadow .2s ease;
+}
+.language-btn:active {transform:scale(.95)}
+.filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filter-btn {
+  border: 2px solid #c28a42;
+  background: linear-gradient(145deg,#f8e9cb,#dfbd83);
+  color: #351505;
+  padding: 9px 17px;
+  min-height: 46px;
+  border-radius: 30px;
+  font-family: 'Cairo',Arial,sans-serif;
+  font-size: .92rem;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(0,0,0,.45);
+  transition: transform .15s ease,background .2s ease;
+}
+.filter-btn:active {transform:scale(.95)}
+.filter-btn.active {
+  background: linear-gradient(145deg,#623413,#321607);
+  color: #ffe7b5;
+  border-color: #d99b46;
+}
+.sticky-controls.compact {
+  padding-top: 5px;
+  padding-bottom: 7px;
+}
+.sticky-controls.compact .sticky-inner {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+.sticky-controls.compact .language-container {flex:0 0 auto}
+.sticky-controls.compact .language-btn {
+  min-width: auto;
+  min-height: 38px;
+  padding: 6px 10px;
+  font-size: .75rem;
+}
+.sticky-controls.compact .filter-container {
+  flex: 1;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 5px;
+  padding-bottom: 2px;
+}
+.sticky-controls.compact .filter-container::-webkit-scrollbar {
+  display:none;
+}
+.sticky-controls.compact .filter-btn {
+  min-height:38px;
+  padding:6px 11px;
+  font-size:.75rem;
+  flex:0 0 auto;
+}
+
+/* SECTION HEADINGS */
+.section-heading {
+  margin: 12px 0 17px;
+  padding: 15px 18px;
+  text-align: center;
+  border-radius: 16px;
+  border: 1px solid rgba(216,161,91,.65);
+  background: linear-gradient(
+    145deg,rgba(65,31,11,.96),rgba(35,15,5,.96)
+  );
+  color: #ffe6b3;
+  box-shadow: 0 7px 18px rgba(0,0,0,.42);
+  transition: opacity .55s ease,transform .55s ease;
+}
+.section-heading h2 {
+  margin:0;
+  font-size:1.25rem;
+  font-weight:800;
+}
+.section-heading p {
+  margin:3px 0 0;
+  color:#dcb77b;
+  font-size:.75rem;
+  font-weight:600;
+}
+
+/* MENU CARDS */
+.menu-card {
+  background:linear-gradient(160deg,#f9ebcf,#e7c994);
+  border:1px solid #b47732;
+  border-radius:18px;
+  overflow:hidden;
+  margin-bottom:22px;
+  box-shadow:0 10px 28px rgba(0,0,0,.60);
+  transition:transform .25s ease,box-shadow .25s ease,opacity .55s ease;
+}
+.menu-card:active {transform:scale(.985)}
+.menu-card.fade-item,.section-heading.fade-item {
+  opacity:0;
+  -webkit-transform:translateY(20px);
+  transform:translateY(20px);
+}
+.menu-card.fade-item.fade-visible,
+.section-heading.fade-item.fade-visible {
+  opacity:1;
+  -webkit-transform:translateY(0);
+  transform:translateY(0);
+}
+
+/* IMAGES */
+.image-wrap {
+  width:100%;
+  overflow:hidden;
+  background:#1d0d05;
+}
+.menu-image {
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  display:block;
+  cursor:pointer;
+  transition:transform .35s ease,opacity .2s ease;
+}
+.menu-image:active {
+  transform:scale(1.025);
+  opacity:.92;
+}
+@media (hover:hover) and (pointer:fine) {
+  .menu-card:hover .menu-image {transform:scale(1.035)}
+  .menu-card:hover {
+    transform:translateY(-3px);
+    box-shadow:0 14px 34px rgba(0,0,0,.68);
+  }
+}
+
+/* CARD CONTENT */
+.card-content {padding:17px 20px 15px}
+.title-price-row {
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:7px;
+}
+.item-title {
+  margin:0;
+  color:#381705;
+  font-size:1.45rem;
+  font-weight:800;
+  flex:1;
+}
+.item-desc {
+  margin:0;
+  color:#694322;
+  font-size:.95rem;
+  line-height:1.8;
+  font-weight:600;
+}
+
+/* PRICE */
+.price {
+  flex:0 0 auto;
+  min-width:72px;
+  padding:6px 12px;
+  text-align:center;
+  border-radius:18px;
+  border:1px solid #d39a4d;
+  background:linear-gradient(145deg,#613313,#351707);
+  color:#ffe9bd;
+  font-size:.88rem;
+  font-weight:800;
+  white-space:nowrap;
+  -webkit-animation:priceGlow 3.8s ease-in-out infinite;
+  animation:priceGlow 3.8s ease-in-out infinite;
+}
+@-webkit-keyframes priceGlow {
+  0%,100% {box-shadow:0 3px 8px rgba(60,25,5,.28)}
+  50% {
+    box-shadow:0 3px 12px rgba(211,154,77,.65),
+    0 0 7px rgba(211,154,77,.25);
+  }
+}
+@keyframes priceGlow {
+  0%,100% {box-shadow:0 3px 8px rgba(60,25,5,.28)}
+  50% {
+    box-shadow:0 3px 12px rgba(211,154,77,.65),
+    0 0 7px rgba(211,154,77,.25);
+  }
+}
+.dual-price {
+  flex:0 0 auto;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  direction:ltr;
+  padding:7px 11px;
+  border-radius:20px;
+  border:1px solid #d39a4d;
+  background:linear-gradient(145deg,#613313,#351707);
+  color:#ffe9bd;
+  box-shadow:0 4px 12px rgba(60,25,5,.35);
+  -webkit-animation:priceGlow 3.8s ease-in-out infinite;
+  animation:priceGlow 3.8s ease-in-out infinite;
+}
+.size-option {
+  min-width:45px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  line-height:1;
+}
+.size-number {
+  font-family:Arial,sans-serif;
+  font-size:1.05rem;
+  font-weight:800;
+}
+.price-slash {
+  padding:0 4px;
+  font-family:Arial,sans-serif;
+  font-size:1.05rem;
+  font-weight:800;
+  line-height:1;
+}
+.cup-large {
+  display:block;
+  margin-top:6px;
+  font-size:1.35rem;
+  line-height:1;
+}
+.cup-small {
+  display:block;
+  margin-top:8px;
+  font-size:.95rem;
+  line-height:1;
+}
+.size-label {
+  display:block;
+  margin-top:5px;
+  font-family:'Cairo',Arial,sans-serif;
+  font-size:.57rem;
+  font-weight:700;
+  color:#f0c887;
+  line-height:1.25;
+}
+.calories {
+  margin-top:12px;
+  padding-top:8px;
+  border-top:1px solid rgba(120,73,32,.18);
+  color:#8a5628;
+  font-family:Arial,'Cairo',sans-serif;
+  font-size:.78rem;
+  font-weight:700;
+}
+html[dir="rtl"] .calories {text-align:left}
+html[dir="ltr"] .calories {text-align:right}
+
+/* FOOTER */
+.footer {
+  margin-top:35px;
+  margin-bottom:10px;
+  padding:25px 20px;
+  text-align:center;
+  border-radius:18px;
+  border:1px solid #b67b39;
+  background:linear-gradient(
+    150deg,rgba(247,233,206,.98),rgba(220,187,132,.98)
+  );
+  box-shadow:0 10px 28px rgba(0,0,0,.55);
+}
+.footer-logo {
+  margin:0;
+  color:#381705;
+  font-size:1.45rem;
+  font-weight:800;
+}
+.footer-tagline {
+  margin:5px 0 0;
+  color:#75471f;
+  font-size:.88rem;
+  font-weight:700;
+}
+.footer-divider {
+  width:70px;
+  height:2px;
+  margin:16px auto;
+  background:linear-gradient(
+    90deg,transparent,#aa702f,#e2ae60,#aa702f,transparent
+  );
+}
+.footer-message {
+  margin:0;
+  color:#5f3416;
+  font-size:.8rem;
+  font-weight:600;
+}
+.phone-label {
+  margin-top:15px;
+  color:#75471f;
+  font-size:.78rem;
+  font-weight:700;
+}
+.footer-phone {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin-top:17px;
+  padding:10px 18px;
+  border-radius:25px;
+  border:1px solid #a86b27;
+  background:linear-gradient(145deg,#613313,#351707);
+  color:#ffe9bd;
+  text-decoration:none;
+  font-family:Arial,'Cairo',sans-serif;
+  font-size:.95rem;
+  font-weight:800;
+  direction:ltr;
+  box-shadow:0 5px 12px rgba(68,30,8,.30);
+}
+.hidden {display:none!important}
+
+/* FULLSCREEN IMAGE */
+.modal {
+  display:none;
+  position:fixed;
+  z-index:999999;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background:rgba(5,3,2,.97);
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+}
+.modal.show {display:flex}
+.modal-img {
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:98vw;
+  max-height:95vh;
+  object-fit:contain;
+  border-radius:8px;
+  box-shadow:0 0 45px rgba(0,0,0,.95);
+  -webkit-animation:photoEntrance .25s ease-out;
+  animation:photoEntrance .25s ease-out;
+}
+@-webkit-keyframes photoEntrance {
+  0% {opacity:0;-webkit-transform:scale(.92)}
+  100% {opacity:1;-webkit-transform:scale(1)}
+}
+@keyframes photoEntrance {
+  0% {opacity:0;transform:scale(.92)}
+  100% {opacity:1;transform:scale(1)}
+}
+.close-btn {
+  position:fixed;
+  top:16px;
+  right:18px;
+  width:56px;
+  height:56px;
+  z-index:1000000;
+  border:2px solid #d29a4e;
+  border-radius:50%;
+  background:rgba(48,21,7,.92);
+  color:white;
+  font-size:38px;
+  cursor:pointer;
+}
+@media (max-width:480px) {
+  body {padding:12px}
+  .header {padding:20px 12px}
+  .header h1 {font-size:1.7rem}
+  .filter-container {gap:6px}
+  .filter-btn {
+    font-size:.78rem;
+    padding:8px 12px;
+    min-height:42px;
+  }
+  .language-btn {font-size:.88rem;min-height:40px}
+  .menu-image {height:270px}
+  .item-title {font-size:1.25rem}
+  .price {min-width:62px;padding:5px 9px;font-size:.78rem}
+  .dual-price {padding:6px 8px}
+  .size-option {min-width:38px}
+  .size-number {font-size:.95rem}
+  .cup-large {font-size:1.2rem}
+  .cup-small {font-size:.82rem}
+}
+</style>
 </head>
 
-
 <body>
-
 <div class="container">
 
+<!-- HEADER -->
+<div class="header">
+  <h1 data-ar="عتيق شاي ومخبوزات"
+      data-en="Ateeq Tea & Pastries">عتيق شاي ومخبوزات</h1>
+  <p data-ar="مخبوزات طازجة ومشروبات مميزة يوميًا"
+     data-en="Freshly baked pastries and carefully prepared drinks, served daily.">
+     مخبوزات طازجة ومشروبات مميزة يوميًا
+  </p>
+</div>
 
-  <!-- ==========================
-       HEADER
-  ========================== -->
+<!-- NAVIGATION -->
+<div class="sticky-controls" id="stickyControls">
+  <div class="sticky-inner">
+    <div class="language-container">
+      <button type="button" id="languageButton" class="language-btn">English</button>
+    </div>
+    <div class="filter-container">
+      <button type="button" class="filter-btn active"
+        data-filter="all" data-ar="الكل" data-en="All">الكل</button>
+      <button type="button" class="filter-btn"
+        data-filter="pastries" data-ar="الفطائر والمخبوزات"
+        data-en="Pastries">الفطائر والمخبوزات</button>
+      <button type="button" class="filter-btn"
+        data-filter="hot-drinks" data-ar="المشروبات الساخنة"
+        data-en="Hot Drinks">المشروبات الساخنة</button>
+      <button type="button" class="filter-btn"
+        data-filter="cold-drinks" data-ar="المشروبات الباردة"
+        data-en="Cold Drinks">المشروبات الباردة</button>
+    </div>
+  </div>
+</div>
 
-  <div class="header">
+<!-- PASTRIES -->
+<div class="section-heading">
+  <h2 data-ar="🥐 الفطائر والمخبوزات"
+      data-en="🥐 Pastries & Bakes">🥐 الفطائر والمخبوزات</h2>
+  <p data-ar="مخبوزات طازجة تُقدَّم يوميًا"
+     data-en="Freshly baked and served daily">مخبوزات طازجة تُقدَّم يوميًا</p>
+</div>
 
-    <h1
-      data-ar="عتيق شاي ومخبوزات"
-      data-en="Ateeq Tea & Pastries">
-      عتيق شاي ومخبوزات
-    </h1>
-
-    <p
-      data-ar="مخبوزات طازجة ومشروبات مميزة يوميًا"
-      data-en="Freshly baked pastries and carefully prepared drinks, served daily.">
-      مخبوزات طازجة ومشروبات مميزة يوميًا
+<!-- مسخن -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="musken .jpeg"
+      alt="مسخن" data-ar-alt="مسخن" data-en-alt="Musakhan">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="مسخن" data-en="Musakhan">مسخن</h2>
+      <span class="price" data-ar="15 ريال" data-en="15 SAR">15 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="لفائف مسخن مقرمشة بحشوة الدجاج والبصل والسماق، محضّرة بنكهة غنية ومميزة."
+      data-en="Crispy Musakhan rolls filled with seasoned chicken, onions, and sumac.">
+      لفائف مسخن مقرمشة بحشوة الدجاج والبصل والسماق، محضّرة بنكهة غنية ومميزة.
     </p>
-
   </div>
+</div>
 
-
-
-  <!-- ==========================
-       NAVIGATION
-  ========================== -->
-
-  <div
-    class="sticky-controls"
-    id="stickyControls"
-  >
-
-    <div class="sticky-inner">
-
-      <div class="language-container">
-
-        <button
-          type="button"
-          id="languageButton"
-          class="language-btn">
-          English
-        </button>
-
-      </div>
-
-
-      <div class="filter-container">
-
-        <button
-          type="button"
-          class="filter-btn active"
-          data-filter="all"
-          data-ar="الكل"
-          data-en="All">
-          الكل
-        </button>
-
-        <button
-          type="button"
-          class="filter-btn"
-          data-filter="pastries"
-          data-ar="الفطائر والمخبوزات"
-          data-en="Pastries">
-          الفطائر والمخبوزات
-        </button>
-
-        <button
-          type="button"
-          class="filter-btn"
-          data-filter="hot-drinks"
-          data-ar="المشروبات الساخنة"
-          data-en="Hot Drinks">
-          المشروبات الساخنة
-        </button>
-
-        <button
-          type="button"
-          class="filter-btn"
-          data-filter="cold-drinks"
-          data-ar="المشروبات الباردة"
-          data-en="Cold Drinks">
-          المشروبات الباردة
-        </button>
-
-      </div>
-
+<!-- عكاوي -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="akaiw fatir.jpeg"
+      alt="فطيرة عكاوي" data-ar-alt="فطيرة عكاوي"
+      data-en-alt="Akkawi cheese pastry">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة عكاوي"
+        data-en="Akkawi Cheese Pastry">فطيرة عكاوي</h2>
+      <span class="price" data-ar="15 ريال" data-en="15 SAR">15 ريال</span>
     </div>
-
-  </div>
-
-
-
-  <!-- ==================================================
-       PASTRIES
-  ================================================== -->
-
-  <div class="section-heading">
-
-    <h2
-      data-ar="🥐 الفطائر والمخبوزات"
-      data-en="🥐 Pastries & Bakes">
-      🥐 الفطائر والمخبوزات
-    </h2>
-
-    <p
-      data-ar="مخبوزات طازجة تُقدَّم يوميًا"
-      data-en="Freshly baked and served daily">
-      مخبوزات طازجة تُقدَّم يوميًا
+    <p class="item-desc"
+      data-ar="فطيرة مخبوزة طازجة ومحشوة بجبنة العكاوي الغنية."
+      data-en="A freshly baked pastry filled with rich, creamy Akkawi cheese.">
+      فطيرة مخبوزة طازجة ومحشوة بجبنة العكاوي الغنية.
     </p>
-
+    <div class="calories"
+      data-ar="تقريبًا 450 سعرة حرارية لكل قطعة"
+      data-en="Approximately 450 calories per piece">
+      تقريبًا 450 سعرة حرارية لكل قطعة
+    </div>
   </div>
+</div>
 
-
-
-  <!-- ==========================
-       1 - مسخن
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="musken .jpeg"
-        alt="مسخن"
-        data-ar-alt="مسخن"
-        data-en-alt="Musakhan"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="مسخن"
-          data-en="Musakhan">
-          مسخن
-        </h2>
-
-        <span
-          class="price"
-          data-ar="15 ريال"
-          data-en="15 SAR">
-          15 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="لفائف مسخن مقرمشة بحشوة الدجاج والبصل والسماق، محضّرة بنكهة غنية ومميزة."
-        data-en="Crispy Musakhan rolls filled with seasoned chicken, onions, and sumac.">
-        لفائف مسخن مقرمشة بحشوة الدجاج والبصل والسماق، محضّرة بنكهة غنية ومميزة.
-      </p>
-
-    </div>
-
+<!-- شيبس -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="chips fatrai.jpeg"
+      alt="فطيرة شيبس" data-ar-alt="فطيرة شيبس"
+      data-en-alt="Cheese and chips pastry">
   </div>
-
-
-
-  <!-- ==========================
-       عكاوي
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="akaiw fatir.jpeg"
-        alt="فطيرة عكاوي"
-        data-ar-alt="فطيرة عكاوي"
-        data-en-alt="Akkawi cheese pastry"
-      >
-
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة شيبس"
+        data-en="Cheese & Chips Pastry">فطيرة شيبس</h2>
+      <span class="price" data-ar="12 ريال" data-en="12 SAR">12 ريال</span>
     </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة عكاوي"
-          data-en="Akkawi Cheese Pastry">
-          فطيرة عكاوي
-        </h2>
-
-        <span
-          class="price"
-          data-ar="15 ريال"
-          data-en="15 SAR">
-          15 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة مخبوزة طازجة ومحشوة بجبنة العكاوي الغنية."
-        data-en="A freshly baked pastry filled with rich, creamy Akkawi cheese.">
-        فطيرة مخبوزة طازجة ومحشوة بجبنة العكاوي الغنية.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 450 سعرة حرارية لكل قطعة"
-        data-en="Approximately 450 calories per piece">
-        تقريبًا 450 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       شيبس
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="chips fatrai.jpeg"
-        alt="فطيرة شيبس"
-        data-ar-alt="فطيرة شيبس"
-        data-en-alt="Cheese and chips pastry"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة شيبس"
-          data-en="Cheese & Chips Pastry">
-          فطيرة شيبس
-        </h2>
-
-        <span
-          class="price"
-          data-ar="12 ريال"
-          data-en="12 SAR">
-          12 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة ساخنة محشوة بالجبن ومغطاة بقطع الشيبس المقرمشة."
-        data-en="A warm cheese-filled pastry topped with crunchy potato chips.">
-        فطيرة ساخنة محشوة بالجبن ومغطاة بقطع الشيبس المقرمشة.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 500 سعرة حرارية لكل قطعة"
-        data-en="Approximately 500 calories per piece">
-        تقريبًا 500 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       بيتزا ببروني
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="peperion pizza.jpeg"
-        alt="فطيرة بيتزا ببروني"
-        data-ar-alt="فطيرة بيتزا ببروني"
-        data-en-alt="Pepperoni pizza pastry"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة بيتزا ببروني"
-          data-en="Pepperoni Pizza Pastry">
-          فطيرة بيتزا ببروني
-        </h2>
-
-        <span
-          class="price"
-          data-ar="15 ريال"
-          data-en="15 SAR">
-          15 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة بيتزا بعجينة طازجة مع صلصة الطماطم والجبن وشرائح الببروني."
-        data-en="Freshly baked pizza pastry topped with tomato sauce, melted cheese, and pepperoni.">
-        فطيرة بيتزا بعجينة طازجة مع صلصة الطماطم والجبن وشرائح الببروني.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 500 سعرة حرارية لكل قطعة"
-        data-en="Approximately 500 calories per piece">
-        تقريبًا 500 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       بيتزا
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="pizza normal.jpeg"
-        alt="فطيرة بيتزا"
-        data-ar-alt="فطيرة بيتزا"
-        data-en-alt="Cheese pizza pastry"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة بيتزا"
-          data-en="Cheese Pizza Pastry">
-          فطيرة بيتزا
-        </h2>
-
-        <span
-          class="price"
-          data-ar="12 ريال"
-          data-en="12 SAR">
-          12 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة بيتزا كلاسيكية بصلصة الطماطم وجبنة الموزاريلا الذائبة."
-        data-en="A classic freshly baked pizza pastry with tomato sauce and melted mozzarella cheese.">
-        فطيرة بيتزا كلاسيكية بصلصة الطماطم وجبنة الموزاريلا الذائبة.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 450 سعرة حرارية لكل قطعة"
-        data-en="Approximately 450 calories per piece">
-        تقريبًا 450 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       بيتزا خضار - 15
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="pizza vegtable.jpeg"
-        alt="فطيرة بيتزا خضار"
-        data-ar-alt="فطيرة بيتزا خضار"
-        data-en-alt="Vegetable pizza pastry"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة بيتزا خضار"
-          data-en="Vegetable Pizza Pastry">
-          فطيرة بيتزا خضار
-        </h2>
-
-        <span
-          class="price"
-          data-ar="15 ريال"
-          data-en="15 SAR">
-          15 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة بيتزا بالخضار الطازجة والزيتون وجبنة الموزاريلا."
-        data-en="A freshly baked pizza pastry topped with vegetables, olives, and melted mozzarella cheese.">
-        فطيرة بيتزا بالخضار الطازجة والزيتون وجبنة الموزاريلا.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 400 سعرة حرارية لكل قطعة"
-        data-en="Approximately 400 calories per piece">
-        تقريبًا 400 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       سبانخ
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="spiacnhe fatri.jpeg"
-        alt="فطيرة سبانخ"
-        data-ar-alt="فطيرة سبانخ"
-        data-en-alt="Spinach pastry"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة سبانخ"
-          data-en="Spinach Pastry">
-          فطيرة سبانخ
-        </h2>
-
-        <span
-          class="price"
-          data-ar="8 ريال"
-          data-en="8 SAR">
-          8 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة تقليدية محشوة بالسبانخ ومتبلّة بالسماق."
-        data-en="A traditional savory pastry filled with spinach and seasoned with sumac.">
-        فطيرة تقليدية محشوة بالسبانخ ومتبلّة بالسماق.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 300 سعرة حرارية لكل قطعة"
-        data-en="Approximately 300 calories per piece">
-        تقريبًا 300 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       ثلاثة أجبان
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="3 cheese.jpeg"
-        alt="فطيرة ثلاثة أجبان"
-        data-ar-alt="فطيرة ثلاثة أجبان"
-        data-en-alt="Three cheese pastry"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة ثلاثة أجبان"
-          data-en="Three Cheese Pastry">
-          فطيرة ثلاثة أجبان
-        </h2>
-
-        <span
-          class="price"
-          data-ar="10 ريال"
-          data-en="10 SAR">
-          10 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة مخبوزة طازجة ومحشوة بمزيج غني من ثلاثة أنواع من الجبن."
-        data-en="A freshly baked pastry filled with a rich blend of three cheeses.">
-        فطيرة مخبوزة طازجة ومحشوة بمزيج غني من ثلاثة أنواع من الجبن.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 520 سعرة حرارية لكل قطعة"
-        data-en="Approximately 520 calories per piece">
-        تقريبًا 520 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       لبنة وعسل
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="labena honey pie.jpeg"
-        alt="فطيرة لبنة وعسل"
-        data-ar-alt="فطيرة لبنة وعسل"
-        data-en-alt="Labneh and honey pastry"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة لبنة وعسل"
-          data-en="Labneh & Honey Pastry">
-          فطيرة لبنة وعسل
-        </h2>
-
-        <span
-          class="price"
-          data-ar="10 ريال"
-          data-en="10 SAR">
-          10 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة طازجة مغطاة باللبنة الكريمية والعسل."
-        data-en="A freshly baked pastry topped with creamy labneh and honey.">
-        فطيرة طازجة مغطاة باللبنة الكريمية والعسل.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 500 سعرة حرارية لكل قطعة"
-        data-en="Approximately 500 calories per piece">
-        تقريبًا 500 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       البيستو
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="pesto pie.jpeg"
-        alt="فطيرة البيستو"
-        data-ar-alt="فطيرة البيستو"
-        data-en-alt="Pesto pastry"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة البيستو"
-          data-en="Pesto Pastry">
-          فطيرة البيستو
-        </h2>
-
-        <span
-          class="price"
-          data-ar="15 ريال"
-          data-en="15 SAR">
-          15 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة مخبوزة طازجة بنكهة البيستو الغنية والمميزة."
-        data-en="A freshly baked pastry with a rich and flavorful pesto topping.">
-        فطيرة مخبوزة طازجة بنكهة البيستو الغنية والمميزة.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 450 سعرة حرارية لكل قطعة"
-        data-en="Approximately 450 calories per piece">
-        تقريبًا 450 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       زعتر ولبنة
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="zatar laben pie.jpeg"
-        alt="فطيرة زعتر ولبنة"
-        data-ar-alt="فطيرة زعتر ولبنة"
-        data-en-alt="Zaatar and labneh pastry"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة زعتر ولبنة"
-          data-en="Zaatar & Labneh Pastry">
-          فطيرة زعتر ولبنة
-        </h2>
-
-        <span
-          class="price"
-          data-ar="10 ريال"
-          data-en="10 SAR">
-          10 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة طازجة تجمع بين نكهة الزعتر واللبنة الكريمية."
-        data-en="A freshly baked pastry combining aromatic zaatar with creamy labneh.">
-        فطيرة طازجة تجمع بين نكهة الزعتر واللبنة الكريمية.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 420 سعرة حرارية لكل قطعة"
-        data-en="Approximately 420 calories per piece">
-        تقريبًا 420 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       زعتر
-  ========================== -->
-
-  <div class="menu-card pastries">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="zatar pie.jpeg"
-        alt="فطيرة زعتر"
-        data-ar-alt="فطيرة زعتر"
-        data-en-alt="Zaatar pastry"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="فطيرة زعتر"
-          data-en="Zaatar Pastry">
-          فطيرة زعتر
-        </h2>
-
-        <span
-          class="price"
-          data-ar="8 ريال"
-          data-en="8 SAR">
-          8 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="فطيرة مخبوزة طازجة ومغطاة بخلطة الزعتر التقليدية."
-        data-en="A freshly baked pastry topped with a traditional aromatic zaatar blend.">
-        فطيرة مخبوزة طازجة ومغطاة بخلطة الزعتر التقليدية.
-      </p>
-
-
-      <div
-        class="calories"
-        data-ar="تقريبًا 330 سعرة حرارية لكل قطعة"
-        data-en="Approximately 330 calories per piece">
-        تقريبًا 330 سعرة حرارية لكل قطعة
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==================================================
-       LAST THREE PASTRIES = CHAPATI
-  ================================================== -->
-
-
-
-
-  <!-- ==================================================
-       HOT DRINKS
-  ================================================== -->
-
-  <div class="section-heading">
-
-    <h2
-      data-ar="☕ المشروبات الساخنة"
-      data-en="☕ Hot Drinks">
-      ☕ المشروبات الساخنة
-    </h2>
-
-    <p
-      data-ar="مشروبات ساخنة تُحضَّر بعناية"
-      data-en="Warm drinks prepared with care">
-      مشروبات ساخنة تُحضَّر بعناية
+    <p class="item-desc"
+      data-ar="فطيرة ساخنة محشوة بالجبن ومغطاة بقطع الشيبس المقرمشة."
+      data-en="A warm cheese-filled pastry topped with crunchy potato chips.">
+      فطيرة ساخنة محشوة بالجبن ومغطاة بقطع الشيبس المقرمشة.
     </p>
-
+    <div class="calories"
+      data-ar="تقريبًا 500 سعرة حرارية لكل قطعة"
+      data-en="Approximately 500 calories per piece">
+      تقريبًا 500 سعرة حرارية لكل قطعة
+    </div>
   </div>
+</div>
 
-
-
-  <!-- دلة قهوة -->
-
-  <div class="menu-card hot-drinks">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="coffe dala.jpeg"
-        alt="دلة قهوة"
-        data-ar-alt="دلة قهوة"
-        data-en-alt="Saudi Arabic coffee"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="دلة قهوة"
-          data-en="Saudi Arabic Coffee">
-          دلة قهوة
-        </h2>
-
-        <span
-          class="price"
-          data-ar="20 ريال"
-          data-en="20 SAR">
-          20 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="دلة قهوة سعودية أصيلة بالهيل، وتُقدَّم مع التمر."
-        data-en="Traditional Saudi coffee infused with aromatic cardamom and served with dates.">
-        دلة قهوة سعودية أصيلة بالهيل، وتُقدَّم مع التمر.
-      </p>
-
-    </div>
-
+<!-- بيتزا ببروني -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="peperion pizza.jpeg"
+      alt="فطيرة بيتزا ببروني" data-ar-alt="فطيرة بيتزا ببروني"
+      data-en-alt="Pepperoni pizza pastry">
   </div>
-
-
-
-  <!-- شاي أخضر -->
-
-  <div class="menu-card hot-drinks">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="tea taif.jpeg"
-        alt="شاي أخضر"
-        data-ar-alt="شاي أخضر"
-        data-en-alt="Green tea"
-      >
-
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة بيتزا ببروني"
+        data-en="Pepperoni Pizza Pastry">فطيرة بيتزا ببروني</h2>
+      <span class="price" data-ar="15 ريال" data-en="15 SAR">15 ريال</span>
     </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="شاي أخضر"
-          data-en="Green Tea">
-          شاي أخضر
-        </h2>
-
-        <span
-          class="price"
-          data-ar="20 ريال"
-          data-en="20 SAR">
-          20 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="شاي أخضر عطري يُقدَّم ساخنًا بنكهة خفيفة ومنعشة."
-        data-en="Fragrant green tea served hot with a light and refreshing flavor.">
-        شاي أخضر عطري يُقدَّم ساخنًا بنكهة خفيفة ومنعشة.
-      </p>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- براد طائفي -->
-
-  <div class="menu-card hot-drinks">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="taif tea.jpeg"
-        alt="براد طائفي"
-        data-ar-alt="براد طائفي"
-        data-en-alt="Taif tea pot"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="براد طائفي"
-          data-en="Taif Tea Pot">
-          براد طائفي
-        </h2>
-
-        <span
-          class="price"
-          data-ar="10 ريال"
-          data-en="10 SAR">
-          10 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="براد شاي محضّر على الطريقة الطائفية ويُقدَّم ساخنًا."
-        data-en="A pot of fragrant tea prepared in the traditional Taif style and served hot.">
-        براد شاي محضّر على الطريقة الطائفية ويُقدَّم ساخنًا.
-      </p>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- شاي قزاز -->
-
-  <div class="menu-card hot-drinks">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="tea glass.jpeg"
-        alt="شاي قزاز"
-        data-ar-alt="شاي قزاز"
-        data-en-alt="Glass of tea"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="شاي قزاز"
-          data-en="Glass of Tea">
-          شاي قزاز
-        </h2>
-
-        <span
-          class="price"
-          data-ar="6 ريال"
-          data-en="6 SAR">
-          6 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="كوب شاي ساخن بنكهة أصيلة ومميزة."
-        data-en="A hot glass of traditional tea with a rich, classic flavor.">
-        كوب شاي ساخن بنكهة أصيلة ومميزة.
-      </p>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- براد شاي -->
-
-  <div class="menu-card hot-drinks">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="tea kettle.jpeg"
-        alt="براد شاي"
-        data-ar-alt="براد شاي"
-        data-en-alt="Tea pot"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="براد شاي"
-          data-en="Tea Pot">
-          براد شاي
-        </h2>
-
-        <span
-          class="price"
-          data-ar="16 ريال"
-          data-en="16 SAR">
-          16 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="براد شاي ساخن يُقدَّم للمشاركة بنكهة الشاي الأصيلة."
-        data-en="A freshly prepared pot of hot traditional tea, perfect for sharing.">
-        براد شاي ساخن يُقدَّم للمشاركة بنكهة الشاي الأصيلة.
-      </p>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==================================================
-       COLD DRINKS
-  ================================================== -->
-
-  <div class="section-heading">
-
-    <h2
-      data-ar="🧊 المشروبات الباردة"
-      data-en="🧊 Cold Drinks">
-      🧊 المشروبات الباردة
-    </h2>
-
-    <p
-      data-ar="خيارات باردة ومنعشة"
-      data-en="Refreshing drinks served chilled">
-      خيارات باردة ومنعشة
+    <p class="item-desc"
+      data-ar="فطيرة بيتزا بعجينة طازجة مع صلصة الطماطم والجبن وشرائح الببروني."
+      data-en="Freshly baked pizza pastry topped with tomato sauce, melted cheese, and pepperoni.">
+      فطيرة بيتزا بعجينة طازجة مع صلصة الطماطم والجبن وشرائح الببروني.
     </p>
-
-  </div>
-
-
-
-  <!-- ==================================================
-       قهوة اليوم - FIRST COLD DRINK
-  ================================================== -->
-
-  <div class="menu-card cold-drinks">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="Cold coffe.jpeg"
-        alt="قهوة اليوم"
-        data-ar-alt="قهوة اليوم"
-        data-en-alt="Coffee of the Day"
-      >
-
+    <div class="calories"
+      data-ar="تقريبًا 500 سعرة حرارية لكل قطعة"
+      data-en="Approximately 500 calories per piece">
+      تقريبًا 500 سعرة حرارية لكل قطعة
     </div>
+  </div>
+</div>
 
+<!-- بيتزا -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="pizza normal.jpeg"
+      alt="فطيرة بيتزا" data-ar-alt="فطيرة بيتزا"
+      data-en-alt="Cheese pizza pastry">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة بيتزا"
+        data-en="Cheese Pizza Pastry">فطيرة بيتزا</h2>
+      <span class="price" data-ar="12 ريال" data-en="12 SAR">12 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="فطيرة بيتزا كلاسيكية بصلصة الطماطم وجبنة الموزاريلا الذائبة."
+      data-en="A classic freshly baked pizza pastry with tomato sauce and melted mozzarella cheese.">
+      فطيرة بيتزا كلاسيكية بصلصة الطماطم وجبنة الموزاريلا الذائبة.
+    </p>
+    <div class="calories"
+      data-ar="تقريبًا 450 سعرة حرارية لكل قطعة"
+      data-en="Approximately 450 calories per piece">
+      تقريبًا 450 سعرة حرارية لكل قطعة
+    </div>
+  </div>
+</div>
 
-    <div class="card-content">
+<!-- بيتزا خضار -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="pizza vegtable.jpeg"
+      alt="فطيرة بيتزا خضار" data-ar-alt="فطيرة بيتزا خضار"
+      data-en-alt="Vegetable pizza pastry">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة بيتزا خضار"
+        data-en="Vegetable Pizza Pastry">فطيرة بيتزا خضار</h2>
+      <span class="price" data-ar="15 ريال" data-en="15 SAR">15 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="فطيرة بيتزا بالخضار الطازجة والزيتون وجبنة الموزاريلا."
+      data-en="A freshly baked pizza pastry topped with vegetables, olives, and melted mozzarella cheese.">
+      فطيرة بيتزا بالخضار الطازجة والزيتون وجبنة الموزاريلا.
+    </p>
+    <div class="calories"
+      data-ar="تقريبًا 400 سعرة حرارية لكل قطعة"
+      data-en="Approximately 400 calories per piece">
+      تقريبًا 400 سعرة حرارية لكل قطعة
+    </div>
+  </div>
+</div>
 
-      <div class="title-price-row">
+<!-- سبانخ -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="spiacnhe fatri.jpeg"
+      alt="فطيرة سبانخ" data-ar-alt="فطيرة سبانخ"
+      data-en-alt="Spinach pastry">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة سبانخ"
+        data-en="Spinach Pastry">فطيرة سبانخ</h2>
+      <span class="price" data-ar="8 ريال" data-en="8 SAR">8 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="فطيرة تقليدية محشوة بالسبانخ ومتبلّة بالسماق."
+      data-en="A traditional savory pastry filled with spinach and seasoned with sumac.">
+      فطيرة تقليدية محشوة بالسبانخ ومتبلّة بالسماق.
+    </p>
+    <div class="calories"
+      data-ar="تقريبًا 300 سعرة حرارية لكل قطعة"
+      data-en="Approximately 300 calories per piece">
+      تقريبًا 300 سعرة حرارية لكل قطعة
+    </div>
+  </div>
+</div>
 
-        <h2
-          class="item-title"
-          data-ar="قهوة اليوم"
-          data-en="Coffee of the Day">
-          قهوة اليوم
-        </h2>
+<!-- ثلاثة أجبان - UPDATED PRICE -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="3 cheese.jpeg"
+      alt="فطيرة ثلاثة أجبان" data-ar-alt="فطيرة ثلاثة أجبان"
+      data-en-alt="Three cheese pastry">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة ثلاثة أجبان"
+        data-en="Three Cheese Pastry">فطيرة ثلاثة أجبان</h2>
+      <span class="price" data-ar="12 ريال" data-en="12 SAR">12 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="فطيرة مخبوزة طازجة ومحشوة بمزيج غني من ثلاثة أنواع من الجبن."
+      data-en="A freshly baked pastry filled with a rich blend of three cheeses.">
+      فطيرة مخبوزة طازجة ومحشوة بمزيج غني من ثلاثة أنواع من الجبن.
+    </p>
+    <div class="calories"
+      data-ar="تقريبًا 520 سعرة حرارية لكل قطعة"
+      data-en="Approximately 520 calories per piece">
+      تقريبًا 520 سعرة حرارية لكل قطعة
+    </div>
+  </div>
+</div>
 
+<!-- لبنة وعسل -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="labena honey pie.jpeg"
+      alt="فطيرة لبنة وعسل" data-ar-alt="فطيرة لبنة وعسل"
+      data-en-alt="Labneh and honey pastry">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة لبنة وعسل"
+        data-en="Labneh & Honey Pastry">فطيرة لبنة وعسل</h2>
+      <span class="price" data-ar="10 ريال" data-en="10 SAR">10 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="فطيرة طازجة مغطاة باللبنة الكريمية والعسل."
+      data-en="A freshly baked pastry topped with creamy labneh and honey.">
+      فطيرة طازجة مغطاة باللبنة الكريمية والعسل.
+    </p>
+    <div class="calories"
+      data-ar="تقريبًا 500 سعرة حرارية لكل قطعة"
+      data-en="Approximately 500 calories per piece">
+      تقريبًا 500 سعرة حرارية لكل قطعة
+    </div>
+  </div>
+</div>
 
-        <!-- LARGE 12 / SMALL 9 -->
+<!-- البيستو -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="pesto pie.jpeg"
+      alt="فطيرة البيستو" data-ar-alt="فطيرة البيستو"
+      data-en-alt="Pesto pastry">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة البيستو"
+        data-en="Pesto Pastry">فطيرة البيستو</h2>
+      <span class="price" data-ar="15 ريال" data-en="15 SAR">15 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="فطيرة مخبوزة طازجة بنكهة البيستو الغنية والمميزة."
+      data-en="A freshly baked pastry with a rich and flavorful pesto topping.">
+      فطيرة مخبوزة طازجة بنكهة البيستو الغنية والمميزة.
+    </p>
+    <div class="calories"
+      data-ar="تقريبًا 450 سعرة حرارية لكل قطعة"
+      data-en="Approximately 450 calories per piece">
+      تقريبًا 450 سعرة حرارية لكل قطعة
+    </div>
+  </div>
+</div>
 
-        <div class="dual-price">
+<!-- زعتر ولبنة -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="zatar laben pie.jpeg"
+      alt="فطيرة زعتر ولبنة" data-ar-alt="فطيرة زعتر ولبنة"
+      data-en-alt="Zaatar and labneh pastry">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة زعتر ولبنة"
+        data-en="Zaatar & Labneh Pastry">فطيرة زعتر ولبنة</h2>
+      <span class="price" data-ar="10 ريال" data-en="10 SAR">10 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="فطيرة طازجة تجمع بين نكهة الزعتر واللبنة الكريمية."
+      data-en="A freshly baked pastry combining aromatic zaatar with creamy labneh.">
+      فطيرة طازجة تجمع بين نكهة الزعتر واللبنة الكريمية.
+    </p>
+    <div class="calories"
+      data-ar="تقريبًا 420 سعرة حرارية لكل قطعة"
+      data-en="Approximately 420 calories per piece">
+      تقريبًا 420 سعرة حرارية لكل قطعة
+    </div>
+  </div>
+</div>
 
-          <div class="size-option">
+<!-- زعتر -->
+<div class="menu-card pastries">
+  <div class="image-wrap">
+    <img class="menu-image" src="zatar pie.jpeg"
+      alt="فطيرة زعتر" data-ar-alt="فطيرة زعتر"
+      data-en-alt="Zaatar pastry">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="فطيرة زعتر"
+        data-en="Zaatar Pastry">فطيرة زعتر</h2>
+      <span class="price" data-ar="8 ريال" data-en="8 SAR">8 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="فطيرة مخبوزة طازجة ومغطاة بخلطة الزعتر التقليدية."
+      data-en="A freshly baked pastry topped with a traditional aromatic zaatar blend.">
+      فطيرة مخبوزة طازجة ومغطاة بخلطة الزعتر التقليدية.
+    </p>
+    <div class="calories"
+      data-ar="تقريبًا 330 سعرة حرارية لكل قطعة"
+      data-en="Approximately 330 calories per piece">
+      تقريبًا 330 سعرة حرارية لكل قطعة
+    </div>
+  </div>
+</div>
 
-            <span class="size-number">
-              12
-            </span>
+<!-- HOT DRINKS -->
+<div class="section-heading">
+  <h2 data-ar="☕ المشروبات الساخنة"
+      data-en="☕ Hot Drinks">☕ المشروبات الساخنة</h2>
+  <p data-ar="مشروبات ساخنة تُحضَّر بعناية"
+     data-en="Warm drinks prepared with care">مشروبات ساخنة تُحضَّر بعناية</p>
+</div>
 
-            <span class="cup-large">
-              ☕
-            </span>
+<!-- دلة قهوة -->
+<div class="menu-card hot-drinks">
+  <div class="image-wrap">
+    <img class="menu-image" src="coffe dala.jpeg"
+      alt="دلة قهوة" data-ar-alt="دلة قهوة"
+      data-en-alt="Saudi Arabic coffee">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="دلة قهوة"
+        data-en="Saudi Arabic Coffee">دلة قهوة</h2>
+      <span class="price" data-ar="20 ريال" data-en="20 SAR">20 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="دلة قهوة سعودية أصيلة بالهيل، وتُقدَّم مع التمر."
+      data-en="Traditional Saudi coffee infused with aromatic cardamom and served with dates.">
+      دلة قهوة سعودية أصيلة بالهيل، وتُقدَّم مع التمر.
+    </p>
+  </div>
+</div>
 
-            <span
-              class="size-label"
-              data-ar="كبير"
-              data-en="Large">
-              كبير
-            </span>
+<!-- شاي أخضر -->
+<div class="menu-card hot-drinks">
+  <div class="image-wrap">
+    <img class="menu-image" src="tea taif.jpeg"
+      alt="شاي أخضر" data-ar-alt="شاي أخضر"
+      data-en-alt="Green tea">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="شاي أخضر"
+        data-en="Green Tea">شاي أخضر</h2>
+      <span class="price" data-ar="20 ريال" data-en="20 SAR">20 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="شاي أخضر عطري يُقدَّم ساخنًا بنكهة خفيفة ومنعشة."
+      data-en="Fragrant green tea served hot with a light and refreshing flavor.">
+      شاي أخضر عطري يُقدَّم ساخنًا بنكهة خفيفة ومنعشة.
+    </p>
+  </div>
+</div>
 
-          </div>
+<!-- براد طائفي -->
+<div class="menu-card hot-drinks">
+  <div class="image-wrap">
+    <img class="menu-image" src="taif tea.jpeg"
+      alt="براد طائفي" data-ar-alt="براد طائفي"
+      data-en-alt="Taif tea pot">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="براد طائفي"
+        data-en="Taif Tea Pot">براد طائفي</h2>
+      <span class="price" data-ar="10 ريال" data-en="10 SAR">10 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="براد شاي محضّر على الطريقة الطائفية ويُقدَّم ساخنًا."
+      data-en="A pot of fragrant tea prepared in the traditional Taif style and served hot.">
+      براد شاي محضّر على الطريقة الطائفية ويُقدَّم ساخنًا.
+    </p>
+  </div>
+</div>
 
+<!-- شاي قزاز -->
+<div class="menu-card hot-drinks">
+  <div class="image-wrap">
+    <img class="menu-image" src="tea glass.jpeg"
+      alt="شاي قزاز" data-ar-alt="شاي قزاز"
+      data-en-alt="Glass of tea">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="شاي قزاز"
+        data-en="Glass of Tea">شاي قزاز</h2>
+      <span class="price" data-ar="6 ريال" data-en="6 SAR">6 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="كوب شاي ساخن بنكهة أصيلة ومميزة."
+      data-en="A hot glass of traditional tea with a rich, classic flavor.">
+      كوب شاي ساخن بنكهة أصيلة ومميزة.
+    </p>
+  </div>
+</div>
 
-          <div class="price-slash">
-            /
-          </div>
+<!-- براد شاي -->
+<div class="menu-card hot-drinks">
+  <div class="image-wrap">
+    <img class="menu-image" src="tea kettle.jpeg"
+      alt="براد شاي" data-ar-alt="براد شاي"
+      data-en-alt="Tea pot">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="براد شاي"
+        data-en="Tea Pot">براد شاي</h2>
+      <span class="price" data-ar="16 ريال" data-en="16 SAR">16 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="براد شاي ساخن يُقدَّم للمشاركة بنكهة الشاي الأصيلة."
+      data-en="A freshly prepared pot of hot traditional tea, perfect for sharing.">
+      براد شاي ساخن يُقدَّم للمشاركة بنكهة الشاي الأصيلة.
+    </p>
+  </div>
+</div>
 
+<!-- COLD DRINKS -->
+<div class="section-heading">
+  <h2 data-ar="🧊 المشروبات الباردة"
+      data-en="🧊 Cold Drinks">🧊 المشروبات الباردة</h2>
+  <p data-ar="خيارات باردة ومنعشة"
+     data-en="Refreshing drinks served chilled">خيارات باردة ومنعشة</p>
+</div>
 
-          <div class="size-option">
-
-            <span class="size-number">
-              9
-            </span>
-
-            <span class="cup-small">
-              ☕
-            </span>
-
-            <span
-              class="size-label"
-              data-ar="صغير"
-              data-en="Small">
-              صغير
-            </span>
-
-          </div>
-
+<!-- قهوة اليوم -->
+<div class="menu-card cold-drinks">
+  <div class="image-wrap">
+    <img class="menu-image" src="Cold coffe.jpeg"
+      alt="قهوة اليوم" data-ar-alt="قهوة اليوم"
+      data-en-alt="Coffee of the Day">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="قهوة اليوم"
+        data-en="Coffee of the Day">قهوة اليوم</h2>
+      <div class="dual-price">
+        <div class="size-option">
+          <span class="size-number">12</span>
+          <span class="cup-large">☕</span>
+          <span class="size-label" data-ar="كبير" data-en="Large">كبير</span>
         </div>
-
+        <div class="price-slash">/</div>
+        <div class="size-option">
+          <span class="size-number">9</span>
+          <span class="cup-small">☕</span>
+          <span class="size-label" data-ar="صغير" data-en="Small">صغير</span>
+        </div>
       </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="قهوة اليوم الباردة، تُقدَّم منعشة وبنكهة قهوة غنية ومتوازنة."
-        data-en="Chilled coffee of the day, served refreshing with a rich and balanced coffee flavor.">
-        قهوة اليوم الباردة، تُقدَّم منعشة وبنكهة قهوة غنية ومتوازنة.
-      </p>
-
     </div>
-
-  </div>
-
-
-
-  <!-- كركديه -->
-
-  <div class="menu-card cold-drinks">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="kakate.jpeg"
-        alt="كركديه"
-        data-ar-alt="كركديه"
-        data-en-alt="Iced hibiscus"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="كركديه"
-          data-en="Iced Hibiscus">
-          كركديه
-        </h2>
-
-        <span
-          class="price"
-          data-ar="15 ريال"
-          data-en="15 SAR">
-          15 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="مشروب كركديه بارد ومنعش بلونه الأحمر الطبيعي ونكهته المميزة."
-        data-en="A refreshing chilled hibiscus drink with its naturally vibrant red color and distinctive flavor.">
-        مشروب كركديه بارد ومنعش بلونه الأحمر الطبيعي ونكهته المميزة.
-      </p>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- آيس تي بالخوخ -->
-
-  <div class="menu-card cold-drinks">
-
-    <div class="image-wrap">
-
-      <img
-        class="menu-image"
-        src="ice tea peach.jpeg"
-        alt="آيس تي بالخوخ"
-        data-ar-alt="آيس تي بالخوخ"
-        data-en-alt="Peach iced tea"
-      >
-
-    </div>
-
-
-    <div class="card-content">
-
-      <div class="title-price-row">
-
-        <h2
-          class="item-title"
-          data-ar="آيس تي بالخوخ"
-          data-en="Peach Iced Tea">
-          آيس تي بالخوخ
-        </h2>
-
-        <span
-          class="price"
-          data-ar="12 ريال"
-          data-en="12 SAR">
-          12 ريال
-        </span>
-
-      </div>
-
-
-      <p
-        class="item-desc"
-        data-ar="شاي مثلج بارد ومنعش بنكهة الخوخ."
-        data-en="Refreshing iced tea with a smooth, fruity peach flavor, served chilled.">
-        شاي مثلج بارد ومنعش بنكهة الخوخ.
-      </p>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- ==========================
-       FOOTER
-  ========================== -->
-
-  <footer class="footer">
-
-    <h2
-      class="footer-logo"
-      data-ar="عتيق شاي ومخبوزات"
-      data-en="Ateeq Tea & Pastries">
-      عتيق شاي ومخبوزات
-    </h2>
-
-
-    <p
-      class="footer-tagline"
-      data-ar="شاي أصيل • مخبوزات طازجة"
-      data-en="Authentic Tea • Freshly Baked">
-      شاي أصيل • مخبوزات طازجة
+    <p class="item-desc"
+      data-ar="قهوة اليوم الباردة، تُقدَّم منعشة وبنكهة قهوة غنية ومتوازنة."
+      data-en="Chilled coffee of the day, served refreshing with a rich and balanced coffee flavor.">
+      قهوة اليوم الباردة، تُقدَّم منعشة وبنكهة قهوة غنية ومتوازنة.
     </p>
-
-
-    <div class="footer-divider"></div>
-
-
-    <p
-      class="footer-message"
-      data-ar="شكرًا لاختياركم عتيق، نتشرّف بخدمتكم 🤎"
-      data-en="Thank you for choosing Ateeq. It is our pleasure to serve you. 🤎">
-      شكرًا لاختياركم عتيق، نتشرّف بخدمتكم 🤎
-    </p>
-
-
-    <div
-      class="phone-label"
-      data-ar="للتواصل والطلبات"
-      data-en="Contact & Orders">
-      للتواصل والطلبات
-    </div>
-
-
-    <a
-      href="tel:0590900933"
-      class="footer-phone"
-      aria-label="059 090 0933">
-      ☎ 059 090 0933
-    </a>
-
-  </footer>
-
-
+  </div>
 </div>
 
-
-
-<!-- ==========================
-     FULLSCREEN IMAGE
-========================== -->
-
-<div
-  id="imageModal"
-  class="modal"
->
-
-  <button
-    id="closeModal"
-    type="button"
-    class="close-btn">
-    &times;
-  </button>
-
-
-  <img
-    id="modalImage"
-    class="modal-img"
-    src=""
-    alt="صورة المنتج"
-  >
-
+<!-- كركديه -->
+<div class="menu-card cold-drinks">
+  <div class="image-wrap">
+    <img class="menu-image" src="kakate.jpeg"
+      alt="كركديه" data-ar-alt="كركديه"
+      data-en-alt="Iced hibiscus">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="كركديه"
+        data-en="Iced Hibiscus">كركديه</h2>
+      <span class="price" data-ar="15 ريال" data-en="15 SAR">15 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="مشروب كركديه بارد ومنعش بلونه الأحمر الطبيعي ونكهته المميزة."
+      data-en="A refreshing chilled hibiscus drink with its naturally vibrant red color and distinctive flavor.">
+      مشروب كركديه بارد ومنعش بلونه الأحمر الطبيعي ونكهته المميزة.
+    </p>
+  </div>
 </div>
 
+<!-- آيس تي بالخوخ -->
+<div class="menu-card cold-drinks">
+  <div class="image-wrap">
+    <img class="menu-image" src="ice tea peach.jpeg"
+      alt="آيس تي بالخوخ" data-ar-alt="آيس تي بالخوخ"
+      data-en-alt="Peach iced tea">
+  </div>
+  <div class="card-content">
+    <div class="title-price-row">
+      <h2 class="item-title" data-ar="آيس تي بالخوخ"
+        data-en="Peach Iced Tea">آيس تي بالخوخ</h2>
+      <span class="price" data-ar="12 ريال" data-en="12 SAR">12 ريال</span>
+    </div>
+    <p class="item-desc"
+      data-ar="شاي مثلج بارد ومنعش بنكهة الخوخ."
+      data-en="Refreshing iced tea with a smooth, fruity peach flavor, served chilled.">
+      شاي مثلج بارد ومنعش بنكهة الخوخ.
+    </p>
+  </div>
+</div>
 
+<!-- FOOTER -->
+<footer class="footer">
+  <h2 class="footer-logo"
+    data-ar="عتيق شاي ومخبوزات"
+    data-en="Ateeq Tea & Pastries">عتيق شاي ومخبوزات</h2>
+  <p class="footer-tagline"
+    data-ar="شاي أصيل • مخبوزات طازجة"
+    data-en="Authentic Tea • Freshly Baked">شاي أصيل • مخبوزات طازجة</p>
+  <div class="footer-divider"></div>
+  <p class="footer-message"
+    data-ar="شكرًا لاختياركم عتيق، نتشرّف بخدمتكم 🤎"
+    data-en="Thank you for choosing Ateeq. It is our pleasure to serve you. 🤎">
+    شكرًا لاختياركم عتيق، نتشرّف بخدمتكم 🤎
+  </p>
+  <div class="phone-label"
+    data-ar="للتواصل والطلبات"
+    data-en="Contact & Orders">للتواصل والطلبات</div>
+  <a href="tel:0590900933" class="footer-phone"
+    aria-label="059 090 0933">☎ 059 090 0933</a>
+</footer>
+</div>
+
+<!-- FULLSCREEN IMAGE -->
+<div id="imageModal" class="modal">
+  <button id="closeModal" type="button" class="close-btn">&times;</button>
+  <img id="modalImage" class="modal-img" src="" alt="صورة المنتج">
+</div>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function () {
+  /* LANGUAGE */
+  var currentLanguage = "ar";
+  var languageButton = document.getElementById("languageButton");
 
+  function changeLanguage(language) {
+    currentLanguage = language;
+    var html = document.documentElement;
 
-    /* ==========================
-       LANGUAGE
-    ========================== */
-
-    var currentLanguage = "ar";
-
-    var languageButton =
-      document.getElementById(
-        "languageButton"
-      );
-
-
-    function changeLanguage(language) {
-
-      currentLanguage = language;
-
-      var html =
-        document.documentElement;
-
-
-      if (language === "en") {
-
-        html.setAttribute(
-          "lang",
-          "en"
-        );
-
-        html.setAttribute(
-          "dir",
-          "ltr"
-        );
-
-        document.title =
-          "Ateeq Tea & Pastries";
-
-        languageButton.textContent =
-          "العربية";
-
-      }
-
-      else {
-
-        html.setAttribute(
-          "lang",
-          "ar"
-        );
-
-        html.setAttribute(
-          "dir",
-          "rtl"
-        );
-
-        document.title =
-          "عتيق شاي ومخبوزات";
-
-        languageButton.textContent =
-          "English";
-
-      }
-
-
-      var translatedElements =
-        document.querySelectorAll(
-          "[data-ar][data-en]"
-        );
-
-
-      for (
-        var i = 0;
-        i < translatedElements.length;
-        i++
-      ) {
-
-        translatedElements[i].textContent =
-          translatedElements[i].getAttribute(
-            language === "en"
-              ? "data-en"
-              : "data-ar"
-          );
-
-      }
-
-
-      var translatedImages =
-        document.querySelectorAll(
-          "[data-ar-alt][data-en-alt]"
-        );
-
-
-      for (
-        var a = 0;
-        a < translatedImages.length;
-        a++
-      ) {
-
-        translatedImages[a].alt =
-          translatedImages[a].getAttribute(
-            language === "en"
-              ? "data-en-alt"
-              : "data-ar-alt"
-          );
-
-      }
-
+    if (language === "en") {
+      html.setAttribute("lang", "en");
+      html.setAttribute("dir", "ltr");
+      document.title = "Ateeq Tea & Pastries";
+      languageButton.textContent = "العربية";
+    } else {
+      html.setAttribute("lang", "ar");
+      html.setAttribute("dir", "rtl");
+      document.title = "عتيق شاي ومخبوزات";
+      languageButton.textContent = "English";
     }
 
-
-    languageButton.addEventListener(
-      "click",
-      function () {
-
-        changeLanguage(
-          currentLanguage === "ar"
-            ? "en"
-            : "ar"
+    var translatedElements = document.querySelectorAll("[data-ar][data-en]");
+    for (var i = 0; i < translatedElements.length; i++) {
+      translatedElements[i].textContent =
+        translatedElements[i].getAttribute(
+          language === "en" ? "data-en" : "data-ar"
         );
-
-      }
-    );
-
-
-
-    /* ==========================
-       FILTER MENU
-    ========================== */
-
-    var filterButtons =
-      document.querySelectorAll(
-        ".filter-btn"
-      );
-
-
-    var menuCards =
-      document.querySelectorAll(
-        ".menu-card"
-      );
-
-
-    var sectionHeadings =
-      document.querySelectorAll(
-        ".section-heading"
-      );
-
-
-    function showSectionHeadings(show) {
-
-      for (
-        var s = 0;
-        s < sectionHeadings.length;
-        s++
-      ) {
-
-        if (show) {
-
-          sectionHeadings[s]
-            .classList
-            .remove("hidden");
-
-        }
-
-        else {
-
-          sectionHeadings[s]
-            .classList
-            .add("hidden");
-
-        }
-
-      }
-
     }
 
-
-    for (
-      var b = 0;
-      b < filterButtons.length;
-      b++
-    ) {
-
-      filterButtons[b]
-        .addEventListener(
-          "click",
-          function () {
-
-            var category =
-              this.getAttribute(
-                "data-filter"
-              );
-
-
-            for (
-              var x = 0;
-              x < filterButtons.length;
-              x++
-            ) {
-
-              filterButtons[x]
-                .classList
-                .remove("active");
-
-            }
-
-
-            this
-              .classList
-              .add("active");
-
-
-            showSectionHeadings(
-              category === "all"
-            );
-
-
-            for (
-              var c = 0;
-              c < menuCards.length;
-              c++
-            ) {
-
-              if (
-                category === "all" ||
-                menuCards[c]
-                  .classList
-                  .contains(category)
-              ) {
-
-                menuCards[c]
-                  .classList
-                  .remove("hidden");
-
-              }
-
-              else {
-
-                menuCards[c]
-                  .classList
-                  .add("hidden");
-
-              }
-
-            }
-
-          }
+    var translatedImages = document.querySelectorAll("[data-ar-alt][data-en-alt]");
+    for (var a = 0; a < translatedImages.length; a++) {
+      translatedImages[a].alt =
+        translatedImages[a].getAttribute(
+          language === "en" ? "data-en-alt" : "data-ar-alt"
         );
-
     }
-
-
-
-    /* ==========================
-       COMPACT NAV
-    ========================== */
-
-    var stickyControls =
-      document.getElementById(
-        "stickyControls"
-      );
-
-
-    function updateStickyControls() {
-
-      var scrollPosition =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        0;
-
-
-      if (
-        scrollPosition > 130
-      ) {
-
-        stickyControls
-          .classList
-          .add("compact");
-
-      }
-
-      else {
-
-        stickyControls
-          .classList
-          .remove("compact");
-
-      }
-
-    }
-
-
-    window.addEventListener(
-      "scroll",
-      updateStickyControls
-    );
-
-
-
-    /* ==========================
-       FADE-IN
-    ========================== */
-
-    var fadeItems =
-      document.querySelectorAll(
-        ".menu-card, .section-heading"
-      );
-
-
-    for (
-      var f = 0;
-      f < fadeItems.length;
-      f++
-    ) {
-
-      fadeItems[f]
-        .classList
-        .add("fade-item");
-
-    }
-
-
-    if (
-      "IntersectionObserver" in window
-    ) {
-
-      var fadeObserver =
-        new IntersectionObserver(
-
-          function (
-            entries,
-            observer
-          ) {
-
-            for (
-              var e = 0;
-              e < entries.length;
-              e++
-            ) {
-
-              if (
-                entries[e]
-                  .isIntersecting
-              ) {
-
-                entries[e]
-                  .target
-                  .classList
-                  .add(
-                    "fade-visible"
-                  );
-
-
-                observer.unobserve(
-                  entries[e].target
-                );
-
-              }
-
-            }
-
-          },
-
-          {
-            threshold: 0.10
-          }
-
-        );
-
-
-      for (
-        var o = 0;
-        o < fadeItems.length;
-        o++
-      ) {
-
-        fadeObserver.observe(
-          fadeItems[o]
-        );
-
-      }
-
-    }
-
-    else {
-
-      for (
-        var v = 0;
-        v < fadeItems.length;
-        v++
-      ) {
-
-        fadeItems[v]
-          .classList
-          .add(
-            "fade-visible"
-          );
-
-      }
-
-    }
-
-
-
-    /* ==========================
-       IMAGE VIEWER
-    ========================== */
-
-    var images =
-      document.querySelectorAll(
-        ".menu-image"
-      );
-
-
-    var modal =
-      document.getElementById(
-        "imageModal"
-      );
-
-
-    var modalImage =
-      document.getElementById(
-        "modalImage"
-      );
-
-
-    var closeButton =
-      document.getElementById(
-        "closeModal"
-      );
-
-
-    for (
-      var j = 0;
-      j < images.length;
-      j++
-    ) {
-
-      images[j]
-        .addEventListener(
-          "click",
-          function () {
-
-            modalImage.src =
-              this.src;
-
-            modalImage.alt =
-              this.alt;
-
-            modal
-              .classList
-              .add("show");
-
-            document.body
-              .style
-              .overflow =
-              "hidden";
-
-          }
-        );
-
-    }
-
-
-    function closeImage() {
-
-      modal
-        .classList
-        .remove("show");
-
-      modalImage.src =
-        "";
-
-      document.body
-        .style
-        .overflow =
-        "";
-
-    }
-
-
-    closeButton
-      .addEventListener(
-        "click",
-        function (event) {
-
-          event.stopPropagation();
-
-          closeImage();
-
-        }
-      );
-
-
-    modal
-      .addEventListener(
-        "click",
-        function (event) {
-
-          if (
-            event.target === modal
-          ) {
-
-            closeImage();
-
-          }
-
-        }
-      );
-
-
-    modalImage
-      .addEventListener(
-        "click",
-        function (event) {
-
-          event.stopPropagation();
-
-        }
-      );
-
-
-    document
-      .addEventListener(
-        "keydown",
-        function (event) {
-
-          if (
-            event.key === "Escape" ||
-            event.keyCode === 27
-          ) {
-
-            closeImage();
-
-          }
-
-        }
-      );
-
-
   }
-);
 
+  languageButton.addEventListener("click", function () {
+    changeLanguage(currentLanguage === "ar" ? "en" : "ar");
+  });
+
+  /* FILTER MENU */
+  var filterButtons = document.querySelectorAll(".filter-btn");
+  var menuCards = document.querySelectorAll(".menu-card");
+  var sectionHeadings = document.querySelectorAll(".section-heading");
+
+  function showSectionHeadings(show) {
+    for (var s = 0; s < sectionHeadings.length; s++) {
+      if (show) {
+        sectionHeadings[s].classList.remove("hidden");
+      } else {
+        sectionHeadings[s].classList.add("hidden");
+      }
+    }
+  }
+
+  for (var b = 0; b < filterButtons.length; b++) {
+    filterButtons[b].addEventListener("click", function () {
+      var category = this.getAttribute("data-filter");
+
+      for (var x = 0; x < filterButtons.length; x++) {
+        filterButtons[x].classList.remove("active");
+      }
+
+      this.classList.add("active");
+      showSectionHeadings(category === "all");
+
+      for (var c = 0; c < menuCards.length; c++) {
+        if (category === "all" || menuCards[c].classList.contains(category)) {
+          menuCards[c].classList.remove("hidden");
+        } else {
+          menuCards[c].classList.add("hidden");
+        }
+      }
+    });
+  }
+
+  /* COMPACT NAV */
+  var stickyControls = document.getElementById("stickyControls");
+
+  function updateStickyControls() {
+    var scrollPosition =
+      window.pageYOffset || document.documentElement.scrollTop || 0;
+
+    if (scrollPosition > 130) {
+      stickyControls.classList.add("compact");
+    } else {
+      stickyControls.classList.remove("compact");
+    }
+  }
+
+  window.addEventListener("scroll", updateStickyControls);
+
+  /* FADE-IN */
+  var fadeItems = document.querySelectorAll(".menu-card, .section-heading");
+
+  for (var f = 0; f < fadeItems.length; f++) {
+    fadeItems[f].classList.add("fade-item");
+  }
+
+  if ("IntersectionObserver" in window) {
+    var fadeObserver = new IntersectionObserver(function (entries, observer) {
+      for (var e = 0; e < entries.length; e++) {
+        if (entries[e].isIntersecting) {
+          entries[e].target.classList.add("fade-visible");
+          observer.unobserve(entries[e].target);
+        }
+      }
+    }, {threshold: 0.10});
+
+    for (var o = 0; o < fadeItems.length; o++) {
+      fadeObserver.observe(fadeItems[o]);
+    }
+  } else {
+    for (var v = 0; v < fadeItems.length; v++) {
+      fadeItems[v].classList.add("fade-visible");
+    }
+  }
+
+  /* IMAGE VIEWER */
+  var images = document.querySelectorAll(".menu-image");
+  var modal = document.getElementById("imageModal");
+  var modalImage = document.getElementById("modalImage");
+  var closeButton = document.getElementById("closeModal");
+
+  for (var j = 0; j < images.length; j++) {
+    images[j].addEventListener("click", function () {
+      modalImage.src = this.src;
+      modalImage.alt = this.alt;
+      modal.classList.add("show");
+      document.body.style.overflow = "hidden";
+    });
+  }
+
+  function closeImage() {
+    modal.classList.remove("show");
+    modalImage.src = "";
+    document.body.style.overflow = "";
+  }
+
+  closeButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    closeImage();
+  });
+
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) closeImage();
+  });
+
+  modalImage.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" || event.keyCode === 27) closeImage();
+  });
+
+});
 </script>
-
-
 </body>
-
 </html>
